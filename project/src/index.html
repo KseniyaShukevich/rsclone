@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
-    
+    <header>
+        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on" style="width: 68px;">
+            <div class="bootstrap-switch-container" style="width: 118px; margin-left: 0px;">
+                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 50px;"></span>
+                <span class="bootstrap-switch-label" style="width: 30px;">&nbsp;</span>
+                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 50px;"></span>
+                <input type="checkbox" name="checkbox" checked="" class="bootstrap-switch" data-on-label="" data-off-label="">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div>Войдите или зарегистрируйтесь</div>
+
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Войти</button>
+          </form>
+    </main>
+
+    <footer></footer>
 </body>
+
 </html>
