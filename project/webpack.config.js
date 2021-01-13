@@ -26,7 +26,7 @@ const optimization = () => {
   return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+const filename = (ext) => `[name].[hash].${ext}`;
 const jsLoaders = () => {
   const loaders = [{
     loader: 'babel-loader',
@@ -34,6 +34,7 @@ const jsLoaders = () => {
       presets: [
         '@babel/preset-env',
       ],
+      plugins: ['@babel/plugin-transform-runtime'],
     },
   }];
 
@@ -48,7 +49,9 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: ['@babel/polyfill', './index.js'],
+    pageOne: './page-registration/index.js',
+    polyfill: '@babel/polyfill',
+    pageTwo: './page-main/index.js',
   },
   output: {
     filename: filename('js'),
@@ -58,7 +61,17 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   plugins: [
     new HTMLWebpackPlugin({
-      template: './index.html',
+      filename: 'index.html',
+      chunks: ['pageOne', 'polyfill'],
+      template: './page-registration/index.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'main.html',
+      chunks: ['pageTwo', 'polyfill'],
+      template: './page-main/main.html',
       minify: {
         collapseWhitespace: isProd,
       },
