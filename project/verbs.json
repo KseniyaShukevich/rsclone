@@ -1,0 +1,872 @@
+{  
+  "arise" : {
+    "infinitive": "arise",
+    "past": "arose",
+    "participle": "arisen",
+    "translation": "возникать"
+  },
+  "awake" : {
+    "infinitive": "awake",
+    "past": "awoke",
+    "participle": "awoken",
+    "translation": "проснуться"
+  },
+  "bear" : {
+    "infinitive": "bear",
+    "past": "bore",
+    "participle": "borne",
+    "translation": "нести"
+  },
+  "beat" : {
+    "infinitive": "beat",
+    "past": "beat",
+    "participle": "beaten",
+    "translation": "бить"
+  },
+  "become" : {
+    "infinitive": "become",
+    "past": "became",
+    "participle": "become",
+    "translation": "становиться"
+  },
+  "begin" : {
+    "infinitive": "begin",
+    "past": "began",
+    "participle": "begun",
+    "translation": "начинать"
+  },
+  "bend" : {
+    "infinitive": "bend",
+    "past": "bent",
+    "participle": "bent",
+    "translation": "сгибаться"
+  },
+  "bet" : {
+    "infinitive": "bet",
+    "past": "bet",
+    "participle": "bet",
+    "translation": "ставить (держать пари)"
+  },
+  "bid" : {
+    "infinitive": "bid",
+    "past": "bid",
+    "participle": "bid",
+    "translation": "предлагать"
+  },
+  "bind" : {
+    "infinitive": "bind",
+    "past": "bound",
+    "participle": "bound",
+    "translation": "связывать"
+  },
+  "bite" : {
+    "infinitive": "bite",
+    "past": "bit",
+    "participle": "bitten",
+    "translation": "кусать"
+  },
+  "bleed" : {
+    "infinitive": "bleed",
+    "past": "bled",
+    "participle": "bled",
+    "translation": "кровоточить"
+  },
+  "blow" : {
+    "infinitive": "blow",
+    "past": "blew",
+    "participle": "blown",
+    "translation": "дуть"
+  },
+  "break" : {
+    "infinitive": "break",
+    "past": "broke",
+    "participle": "broken",
+    "translation": "ломать"
+  },
+  "breed" : {
+    "infinitive": "breed",
+    "past": "bred",
+    "participle": "bred",
+    "translation": "разводить"
+  },
+  "bring" : {
+    "infinitive": "bring",
+    "past": "brought",
+    "participle": "brought",
+    "translation": "приносить"
+  },
+  "build" : {
+    "infinitive": "build",
+    "past": "built",
+    "participle": "built",
+    "translation": "строить"
+  },
+  "burn" : {
+    "infinitive": "burn",
+    "past": "burnt",
+    "participle": "burnt",
+    "translation": "гореть"
+  },
+  "burst" : {
+    "infinitive": "burst",
+    "past": "burst",
+    "participle": "burst",
+    "translation": "взрывать"
+  },
+  "buy" : {
+    "infinitive": "buy",
+    "past": "bought",
+    "participle": "bought",
+    "translation": "покупать"
+  },
+  "cast" : {
+    "infinitive": "cast",
+    "past": "cast",
+    "participle": "cast",
+    "translation": "бросать"
+  },
+  "catch" : {
+    "infinitive": "catch",
+    "past": "caught",
+    "participle": "caught",
+    "translation": "ловить"
+  },
+  "choose" : {
+    "infinitive": "choose",
+    "past": "chose",
+    "participle": "chosen",
+    "translation": "выбирать"
+  },
+  "cling" : {
+    "infinitive": "cling",
+    "past": "clung",
+    "participle": "clung",
+    "translation": "цепляться"
+  },
+  "come" : {
+    "infinitive": "come",
+    "past": "came",
+    "participle": "come",
+    "translation": "приходить"
+  },
+  "cost" : {
+    "infinitive": "cost",
+    "past": "cost",
+    "participle": "cost",
+    "translation": "стоить (оценка стоимости)"
+  },
+  "creep" : {
+    "infinitive": "creep",
+    "past": "crept",
+    "participle": "crept",
+    "translation": "ползать"
+  },
+  "cut" : {
+    "infinitive": "cut",
+    "past": "cut",
+    "participle": "cut",
+    "translation": "резать"
+  },
+  "deal" : {
+    "infinitive": "deal",
+    "past": "dealt",
+    "participle": "dealt",
+    "translation": "иметь дело (совершать сделку)"
+  },
+  "dig" : {
+    "infinitive": "dig",
+    "past": "dug",
+    "participle": "dug",
+    "translation": "копать"
+  },
+  "do" : {
+    "infinitive": "do",
+    "past": "did",
+    "participle": "done",
+    "translation": "делать"
+  },
+  "draw" : {
+    "infinitive": "draw",
+    "past": "drew",
+    "participle": "drawn",
+    "translation": "рисовать"
+  },
+  "dream" : {
+    "infinitive": "dream",
+    "past": "dreamt",
+    "participle": "dreamt",
+    "translation": "мечтать (видеть сны)"
+  },
+  "drink" : {
+    "infinitive": "drink",
+    "past": "drank",
+    "participle": "drunk",
+    "translation": "пить"
+  },
+  "drive" : {
+    "infinitive": "drive",
+    "past": "drove",
+    "participle": "driven",
+    "translation": "водить"
+  },
+  "eat" : {
+    "infinitive": "eat",
+    "past": "ate",
+    "participle": "eaten",
+    "translation": "кушать"
+  },
+  "fall" : {
+    "infinitive": "fall",
+    "past": "fell",
+    "participle": "fallen",
+    "translation": "падать"
+  },
+  "feed" : {
+    "infinitive": "feed",
+    "past": "fed",
+    "participle": "fed",
+    "translation": "кормить"
+  },
+  "feel" : {
+    "infinitive": "feel",
+    "past": "felt",
+    "participle": "felt",
+    "translation": "чувствовать"
+  },
+  "fight" : {
+    "infinitive": "fight",
+    "past": "fought",
+    "participle": "fought",
+    "translation": "драться"
+  },
+  "find" : {
+    "infinitive": "find",
+    "past": "found",
+    "participle": "found",
+    "translation": "находить"
+  },
+  "flee" : {
+    "infinitive": "flee",
+    "past": "fled",
+    "participle": "fled",
+    "translation": "избегать"
+  },
+  "fly" : {
+    "infinitive": "fly",
+    "past": "flew",
+    "participle": "flown",
+    "translation": "летать"
+  },
+  "forbid" : {
+    "infinitive": "forbid",
+    "past": "forbade",
+    "participle": "forbidden",
+    "translation": "запретить"
+  },
+  "forget" : {
+    "infinitive": "forget",
+    "past": "forgot",
+    "participle": "forgotten",
+    "translation": "забыть"
+  },
+  "forgive" : {
+    "infinitive": "forgive",
+    "past": "forgave",
+    "participle": "forgiven",
+    "translation": "простить"
+  },
+  "freeze" : {
+    "infinitive": "freeze",
+    "past": "froze",
+    "participle": "frozen",
+    "translation": "замерзать"
+  },
+  "get" : {
+    "infinitive": "get",
+    "past": "got",
+    "participle": "got",
+    "translation": "получить"
+  },
+  "give" : {
+    "infinitive": "give",
+    "past": "gave",
+    "participle": "given",
+    "translation": "давать"
+  },
+  "go" : {
+    "infinitive": "go",
+    "past": "went",
+    "participle": "gone",
+    "translation": "идти"
+  },
+  "grind" : {
+    "infinitive": "grind",
+    "past": "ground",
+    "participle": "ground",
+    "translation": "молоть"
+  },
+  "grow" : {
+    "infinitive": "grow",
+    "past": "grew",
+    "participle": "grown",
+    "translation": "расти"
+  },
+  "hang" : {
+    "infinitive": "hang",
+    "past": "hung",
+    "participle": "hung",
+    "translation": "висеть"
+  },
+  "have" : {
+    "infinitive": "have",
+    "past": "had",
+    "participle": "had",
+    "translation": "иметь"
+  },
+  "hear" : {
+    "infinitive": "hear",
+    "past": "heard",
+    "participle": "heard",
+    "translation": "слышать"
+  },
+  "hide" : {
+    "infinitive": "hide",
+    "past": "hid",
+    "participle": "hidden",
+    "translation": "прятать"
+  },
+  "hit" : {
+    "infinitive": "hit",
+    "past": "hit",
+    "participle": "hit",
+    "translation": "поражать (наносить удар)"
+  },
+  "hold" : {
+    "infinitive": "hold",
+    "past": "held",
+    "participle": "held",
+    "translation": "держать"
+  },
+  "hurt" : {
+    "infinitive": "hurt",
+    "past": "hurt",
+    "participle": "hurt",
+    "translation": "ранить"
+  },
+  "keep" : {
+    "infinitive": "keep",
+    "past": "kept",
+    "participle": "kept",
+    "translation": "хранить"
+  },
+  "kneel" : {
+    "infinitive": "kneel",
+    "past": "knelt",
+    "participle": "knelt",
+    "translation": "преклоняьться"
+  },
+  "know" : {
+    "infinitive": "know",
+    "past": "knew",
+    "participle": "known",
+    "translation": "знать"
+  },
+  "lay" : {
+    "infinitive": "lay",
+    "past": "laid",
+    "participle": "laid",
+    "translation": "лежать"
+  },
+  "lead" : {
+    "infinitive": "lead",
+    "past": "led",
+    "participle": "led",
+    "translation": "вести (руководить)"
+  },
+  "lean" : {
+    "infinitive": "lean",
+    "past": "leant",
+    "participle": "leant",
+    "translation": "опираться"
+  },
+  "leap" : {
+    "infinitive": "leap",
+    "past": "leapt",
+    "participle": "leapt",
+    "translation": "скакать"
+  },
+  "learn" : {
+    "infinitive": "learn",
+    "past": "learnt",
+    "participle": "learnt",
+    "translation": "учить"
+  },
+  "leave" : {
+    "infinitive": "leave",
+    "past": "left",
+    "participle": "left",
+    "translation": "покидать"
+  },
+  "lend" : {
+    "infinitive": "lend",
+    "past": "lent",
+    "participle": "lent",
+    "translation": "одалживать (давать взаймы)"
+  },
+  "let" : {
+    "infinitive": "let",
+    "past": "let",
+    "participle": "let",
+    "translation": "позволять"
+  },
+  "lie" : {
+    "infinitive": "lie",
+    "past": "lay",
+    "participle": "lain",
+    "translation": "лгать"
+  },
+  "light" : {
+    "infinitive": "light",
+    "past": "lit",
+    "participle": "lit",
+    "translation": "освещать"
+  },
+  "lose" : {
+    "infinitive": "lose",
+    "past": "lost",
+    "participle": "lost",
+    "translation": "терять (проигрывать)"
+  },
+  "make" : {
+    "infinitive": "make",
+    "past": "made",
+    "participle": "made",
+    "translation": "делать (производить)"
+  },
+  "mean" : {
+    "infinitive": "mean",
+    "past": "meant",
+    "participle": "meant",
+    "translation": "означать"
+  },
+  "meet" : {
+    "infinitive": "meet",
+    "past": "met",
+    "participle": "met",
+    "translation": "встречать"
+  },
+  "overcome" : {
+    "infinitive": "overcome",
+    "past": "overcame",
+    "participle": "overcome",
+    "translation": "преодолевать"
+  },
+  "pay" : {
+    "infinitive": "pay",
+    "past": "paid",
+    "participle": "paid",
+    "translation": "платить"
+  },
+  "put" : {
+    "infinitive": "put",
+    "past": "put",
+    "participle": "put",
+    "translation": "положить"
+  },
+  "read" : {
+    "infinitive": "read",
+    "past": "read",
+    "participle": "read",
+    "translation": "читать"
+  },
+  "ride" : {
+    "infinitive": "ride",
+    "past": "rode",
+    "participle": "ridden",
+    "translation": "ездить"
+  },
+  "ring" : {
+    "infinitive": "ring",
+    "past": "rang",
+    "participle": "rung",
+    "translation": "звенеть"
+  },
+  "rise" : {
+    "infinitive": "rise",
+    "past": "rose",
+    "participle": "risen",
+    "translation": "подниматься"
+  },
+  "run" : {
+    "infinitive": "run",
+    "past": "ran",
+    "participle": "run",
+    "translation": "бегать"
+  },
+  "saw" : {
+    "infinitive": "saw",
+    "past": "sawed",
+    "participle": "sawn",
+    "translation": "пилить"
+  },
+  "say" : {
+    "infinitive": "say",
+    "past": "said",
+    "participle": "said",
+    "translation": "сказать"
+  },
+  "see" : {
+    "infinitive": "see",
+    "past": "saw",
+    "participle": "seen",
+    "translation": "видеть"
+  },
+  "seek" : {
+    "infinitive": "seek",
+    "past": "sought",
+    "participle": "sought",
+    "translation": "искать"
+  },
+  "sell" : {
+    "infinitive": "sell",
+    "past": "sold",
+    "participle": "sold",
+    "translation": "продавать"
+  },
+  "send" : {
+    "infinitive": "send",
+    "past": "sent",
+    "participle": "sent",
+    "translation": "посылать"
+  },
+  "set" : {
+    "infinitive": "set",
+    "past": "set",
+    "participle": "set",
+    "translation": "устанавливать"
+  },
+  "sew" : {
+    "infinitive": "sew",
+    "past": "sewed",
+    "participle": "sewn",
+    "translation": "шить"
+  },
+  "shake" : {
+    "infinitive": "shake",
+    "past": "shook",
+    "participle": "shaken",
+    "translation": "трясти"
+  },
+  "shear" : {
+    "infinitive": "shear",
+    "past": "sheared",
+    "participle": "shorn",
+    "translation": "стричь"
+  },
+  "shine" : {
+    "infinitive": "shine",
+    "past": "shone",
+    "participle": "shone",
+    "translation": "блестеть"
+  },
+  "shoot" : {
+    "infinitive": "shoot",
+    "past": "shot",
+    "participle": "shot",
+    "translation": "стрелять"
+  },
+  "show" : {
+    "infinitive": "show",
+    "past": "showed",
+    "participle": "shown",
+    "translation": "показывать"
+  },
+  "shrink" : {
+    "infinitive": "shrink",
+    "past": "shrank",
+    "participle": "shrunk",
+    "translation": "сжиматься"
+  },
+  "shut" : {
+    "infinitive": "shut",
+    "past": "shut",
+    "participle": "shut",
+    "translation": "закрывать"
+  },
+  "sing" : {
+    "infinitive": "sing",
+    "past": "sang",
+    "participle": "sung",
+    "translation": "петь"
+  },
+  "sink" : {
+    "infinitive": "sink",
+    "past": "sank",
+    "participle": "sunk",
+    "translation": "тонуть"
+  },
+  "sit" : {
+    "infinitive": "sit",
+    "past": "sat",
+    "participle": "sat",
+    "translation": "сидеть"
+  },
+  "sleep" : {
+    "infinitive": "sleep",
+    "past": "slept",
+    "participle": "slept",
+    "translation": "спать"
+  },
+  "slide" : {
+    "infinitive": "slide",
+    "past": "slid",
+    "participle": "slid",
+    "translation": "скользить"
+  },
+  "smell" : {
+    "infinitive": "smell",
+    "past": "smelt",
+    "participle": "smelt",
+    "translation": "пахнуть"
+  },
+  "sow" : {
+    "infinitive": "sow",
+    "past": "sowed",
+    "participle": "sown",
+    "translation": "сеять"
+  },
+  "speak" : {
+    "infinitive": "speak",
+    "past": "spoke",
+    "participle": "spoken",
+    "translation": "говорить"
+  },
+  "speed" : {
+    "infinitive": "speed",
+    "past": "sped",
+    "participle": "sped",
+    "translation": "ускорять"
+  },
+  "spell" : {
+    "infinitive": "spell",
+    "past": "spelt",
+    "participle": "spelt",
+    "translation": "произнести"
+  },
+  "spend" : {
+    "infinitive": "spend",
+    "past": "spent",
+    "participle": "spent",
+    "translation": "тратить"
+  },
+  "spill" : {
+    "infinitive": "spill",
+    "past": "spilt",
+    "participle": "spilt",
+    "translation": "пролить"
+  },
+  "spit" : {
+    "infinitive": "spit",
+    "past": "spat",
+    "participle": "spat",
+    "translation": "плевать"
+  },
+  "split" : {
+    "infinitive": "split",
+    "past": "split",
+    "participle": "split",
+    "translation": "расколоть"
+  },
+  "spoil" : {
+    "infinitive": "spoil",
+    "past": "spoilt",
+    "participle": "spoilt",
+    "translation": "портить"
+  },
+  "spread" : {
+    "infinitive": "spread",
+    "past": "spread",
+    "participle": "spread",
+    "translation": "распространять"
+  },
+  "stand" : {
+    "infinitive": "stand",
+    "past": "stood",
+    "participle": "stood",
+    "translation": "стоять"
+  },
+  "steal" : {
+    "infinitive": "steal",
+    "past": "stole",
+    "participle": "stolen",
+    "translation": "красть"
+  },
+  "stick" : {
+    "infinitive": "stick",
+    "past": "stuck",
+    "participle": "stuck",
+    "translation": "держаться"
+  },
+  "sting" : {
+    "infinitive": "sting",
+    "past": "stung",
+    "participle": "stung",
+    "translation": "жалить"
+  },
+  "stink" : {
+    "infinitive": "stink",
+    "past": "stank",
+    "participle": "stunk",
+    "translation": "вонять"
+  },
+  "strike" : {
+    "infinitive": "strike",
+    "past": "struck",
+    "participle": "struck",
+    "translation": "бить (наносить удар)"
+  },
+  "strive" : {
+    "infinitive": "strive",
+    "past": "strove",
+    "participle": "striven",
+    "translation": "бороться"
+  },
+  "swear" : {
+    "infinitive": "swear",
+    "past": "swore",
+    "participle": "sworn",
+    "translation": "клясться"
+  },
+  "sweep" : {
+    "infinitive": "sweep",
+    "past": "swept",
+    "participle": "swept",
+    "translation": "мести"
+  },
+  "swim" : {
+    "infinitive": "swim",
+    "past": "swam",
+    "participle": "swum",
+    "translation": "плавать"
+  },
+  "swing" : {
+    "infinitive": "swing",
+    "past": "swung",
+    "participle": "swung",
+    "translation": "качать (размахивать)"
+  },
+  "take" : {
+    "infinitive": "take",
+    "past": "took",
+    "participle": "taken",
+    "translation": "взять"
+  },
+  "teach" : {
+    "infinitive": "teach",
+    "past": "taught",
+    "participle": "taught",
+    "translation": "учить"
+  },
+  "tear" : {
+    "infinitive": "tear",
+    "past": "tore",
+    "participle": "torn",
+    "translation": "рвать"
+  },
+  "tell" : {
+    "infinitive": "tell",
+    "past": "told",
+    "participle": "told",
+    "translation": "рассказать"
+  },
+  "think" : {
+    "infinitive": "think",
+    "past": "thought",
+    "participle": "thought",
+    "translation": "думать"
+  },
+  "throw" : {
+    "infinitive": "throw",
+    "past": "threw",
+    "participle": "thrown",
+    "translation": "кидать"
+  },
+  "tread" : {
+    "infinitive": "tread",
+    "past": "trod",
+    "participle": "trodden",
+    "translation": "наступать (шагать)"
+  },
+  "undergo" : {
+    "infinitive": "undergo",
+    "past": "underwent",
+    "participle": "undergone",
+    "translation": "проходить"
+  },
+  "understand" : {
+    "infinitive": "understand",
+    "past": "understood",
+    "participle": "understood",
+    "translation": "понимать"
+  },
+  "upset" : {
+    "infinitive": "upset",
+    "past": "upset",
+    "participle": "upset",
+    "translation": "расстраивать"
+  },
+  "wake" : {
+    "infinitive": "wake",
+    "past": "woke",
+    "participle": "woken",
+    "translation": "просыпаться"
+  },
+  "wear" : {
+    "infinitive": "wear",
+    "past": "wore",
+    "participle": "worn",
+    "translation": "носить"
+  },
+  "weave" : {
+    "infinitive": "weave",
+    "past": "wove",
+    "participle": "woven",
+    "translation": "ткать"
+  },
+  "weep" : {
+    "infinitive": "weep",
+    "past": "wept",
+    "participle": "wept",
+    "translation": "оплакивать"
+  },
+  "win" : {
+    "infinitive": "win",
+    "past": "won",
+    "participle": "won",
+    "translation": "победить"
+  },
+  "wind" : {
+    "infinitive": "wind",
+    "past": "wound",
+    "participle": "wound",
+    "translation": "обматывать"
+  },
+  "withdraw" : {
+    "infinitive": "withdraw",
+    "past": "withdrew",
+    "participle": "withdrawn",
+    "translation": "изымать"
+  },
+  "wring" : {
+    "infinitive": "wring",
+    "past": "wrung",
+    "participle": "wrung",
+    "translation": "выжимать"
+  },
+  "write" : {
+    "infinitive": "write",
+    "past": "wrote",
+    "participle": "written",
+    "translation": "писать"
+  }
+}
