@@ -1,8 +1,38 @@
+const User = require('../controllers/user-schema');
+const mongoose = require('mongoose');
+const db = mongoose.connection;
+
 const CONTACTS = [
     {id: 1, name: 'ssf', value: 'AAAAAAAAAAAf'}
   ];
 
+const users = [
+  new User({name: 'Name', password: 'Pass', progress: [1, 2]}),
+  new User({name: 'Name2', password: 'Pass2', progress: []}),
+];
+
 const getContacts = (req, res) => {
+    // db.dropDatabase();
+    // users.forEach(user => user.save(function(err) {
+    //   console.log(err);
+    // }));
+
+    // User.findById('6002daf1f5664a2b2498a3bc', function(err, res) {
+    //   if(err) return console.log(err);
+    //   console.log(res);
+    //   const progressArr = res.progress;
+    //   progressArr.push(3);
+
+    //   User.updateOne({_id: '6002daf1f5664a2b2498a3bc'}, {progress: progressArr}, function(err) {
+    //     if(err) return console.log(err);
+    //   });
+    // });
+    
+    // User.find({}, function(err, docs){
+    //   if(err) return console.log(err);
+    //   console.log('sfd', docs);
+    // });
+
     res.json(CONTACTS);
   }
 
