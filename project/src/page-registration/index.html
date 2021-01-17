@@ -22,16 +22,19 @@
     <main>
         <div>Войдите или зарегистрируйтесь</div>
 
-        <form>
+        <form action="http://localhost:3000/api/redirect" method="post" id="log">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="inputEmail1" class="form-label">Email</label>
+              <input type="email" id="email-log" class="form-control" name="email" id="inputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="inputPassword1" class="form-label">Пароль</label>
+              <input type="password" id="password-log" class="form-control" name="password" id="inputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary">Войти</button>
+            <div class="message-error">
+                Неверный адрес почты или пароль.
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-log">Войти</button>
           </form>
     </main>
 

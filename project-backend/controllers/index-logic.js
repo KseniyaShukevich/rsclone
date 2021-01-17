@@ -7,8 +7,8 @@ const CONTACTS = [
   ];
 
 const users = [
-  new User({name: 'Name', password: 'Pass', progress: [1, 2]}),
-  new User({name: 'Name2', password: 'Pass2', progress: []}),
+  new User({name: 'Name', email: 'test@test.com', password: 'Pass', progress: [1, 2]}),
+  new User({name: 'Name2', email: 'test@test.com', password: 'Pass2', progress: []}),
 ];
 
 const getContacts = (req, res) => {
@@ -27,7 +27,7 @@ const getContacts = (req, res) => {
     //     if(err) return console.log(err);
     //   });
     // });
-    
+
     // User.find({}, function(err, docs){
     //   if(err) return console.log(err);
     //   console.log('sfd', docs);
