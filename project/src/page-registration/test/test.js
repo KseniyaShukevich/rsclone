@@ -21,4 +21,14 @@ async function getResult() {
   console.log(result);
 }
 
+function showRegistrationForm() {
+  const registrationForm = document.querySelector('.registration-form');
+  const registrationButton = document.querySelector('.registration-btn');
+
+  registrationButton.addEventListener('click', () => {
+    registrationForm.style.display = 'block';
+  });
+}
+
 getResult();
+showRegistrationForm();
