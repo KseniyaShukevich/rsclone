@@ -17,6 +17,21 @@ body {
     height: 100vh;
 }
 
+.message-error {
+    display: none;
+    color: red;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.display-block {
+    display: block;
+}
+
+.registration-form {
+    display: none;
+}
+
 .bootstrap-switch {
     display: inline-block;
     direction: ltr;
