@@ -1,0 +1,10 @@
+.disabled {
+    display: none;
+}
+
+.footer > .button {
+    font-size: 32px;
+    &:hover {
+        cursor: pointer;
+    }
+}
