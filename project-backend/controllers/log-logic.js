@@ -4,7 +4,7 @@ const User = require('../controllers/user-schema');
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 
-const getStatusLog = (req, res, next) => {
+const getStatusLog = (req, res) => {
     User.find({email: req.body.email, password: req.body.password}, function(err, result) {
         if(err) return console.log(err);
         if (!result.length) {

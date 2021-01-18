@@ -1,4 +1,5 @@
 import request from '../../services/request';
+import regUser from '../authorization/reg';
 
 const contact = [
   {
@@ -24,10 +25,13 @@ async function getResult() {
 function showRegistrationForm() {
   const registrationForm = document.querySelector('.registration-form');
   const registrationButton = document.querySelector('.registration-btn');
+  const btn = document.getElementById('btn-reg');
 
   registrationButton.addEventListener('click', () => {
     registrationForm.style.display = 'block';
   });
+
+  btn.addEventListener('click', regUser);
 }
 
 getResult();

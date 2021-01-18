@@ -20,16 +20,16 @@
     </header>
 
     <main>
-        <div>Войдите или зарегистрируйтесь</div>
+        <div>Войдите</div>
 
         <form class="signup-form" action="http://localhost:3000/api/redirect" method="post" id="log">
             <div class="mb-3">
-              <label for="inputEmail1" class="form-label">Email</label>
-              <input type="email" id="email-log" class="form-control" name="email" id="inputEmail1" aria-describedby="emailHelp">
+              <label for="email-log" class="form-label">Email</label>
+              <input type="email" id="email-log" class="form-control" name="email" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="inputPassword1" class="form-label">Пароль</label>
-              <input type="password" id="password-log" class="form-control" name="password" id="inputPassword1">
+              <label for="password-log" class="form-label">Пароль</label>
+              <input type="password" id="password-log" class="form-control" name="password">
             </div>
             <div class="message-error">
                 Неверный адрес почты или пароль.
@@ -40,16 +40,23 @@
           <div>Еще нет аккаунта? Зарегистрируйтесь</div>
           <button type="submit" class="btn btn-primary registration-btn">Зарегистрируйтесь</button>
 
-          <form class="registration-form">
+          <form class="registration-form" action="http://localhost:3000/api/redirect" method="post" id="reg">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="name-reg" class="form-label">Имя</label>
+              <input type="name" class="form-control" id="name-reg" name="name">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="email-reg" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email-reg" aria-describedby="emailHelp">
             </div>
-            <button type="submit" class="btn btn-primary">Регистрация</button>
+            <div class="mb-3">
+              <label for="pass-reg" class="form-label">Пароль (Не меньше 6-ти знаков)</label>
+              <input type="password" class="form-control" name="password" id="pass-reg">
+            </div>
+            <div class="message-error" id="error-reg">
+              Ошибка при регистрации. Убедитесь, что данные верны.
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-reg">Регистрация</button>
           </form>
     </main>
 
