@@ -4,13 +4,31 @@ const User = require('../controllers/user-schema');
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 
+const updateUser = (req) => {
+    User.updateOne(
+        {email: req.body.email},
+        { $set: {token: req.body.token}},
+        function(err){
+            if(err) return console.log(err);
+        }
+      );
+}
+
 const getStatusLog = (req, res) => {
-    User.find({email: req.body.email, password: req.body.password}, function(err, result) {
+    User.find({email: req.body.email}, async function(err, result) {
         if(err) return console.log(err);
+
         if (!result.length) {
-          res.json({status: '401'});
+          res.status(401).end();
         } else {
-          res.json({status: '200', user: result});
+            const isThisUser = await bcrypt.compare(req.body.password, result[0].password);
+
+            if (isThisUser) {
+                updateUser(req);
+                res.json({});
+            } else {
+                res.status(401).end();
+            }
         }
     })
 }

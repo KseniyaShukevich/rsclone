@@ -13,7 +13,7 @@ router.delete('/api/contacts/:id', logicContacts.deleteContacts);
 
 router.put('/api/contacts/:id', logicContacts.putContacts);
 
-router.post('/api/getStatusLog', logicLog.getStatusLog);
+router.post('/api/log', logicLog.getStatusLog);
 
 router.post('/api/redirect', logicLog.redirect);
 

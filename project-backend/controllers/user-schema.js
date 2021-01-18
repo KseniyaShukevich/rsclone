@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+const uuid = require('uuid');
 
 const userSchema = new mongoose.Schema({
         name: String,
         email: String,
         password: String,
         progress: Array,
+        token: String,
     },
     {
         versionKey: false
