@@ -15,7 +15,7 @@ router.put('/api/contacts/:id', logicContacts.putContacts);
 
 router.post('/api/log', logicLog.getStatusLog);
 
-router.post('/api/redirect', logicLog.redirect);
+router.post('/api/user', logicLog.redirect);
 
 router.post('/api/registration', logicReg.regUser);
 

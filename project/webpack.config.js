@@ -52,6 +52,7 @@ module.exports = {
     pageOne: './page-registration/index.js',
     polyfill: '@babel/polyfill',
     pageTwo: './page-main/index.js',
+    pageUser: './page-user/index.js',
   },
   output: {
     filename: filename('js'),
@@ -72,6 +73,14 @@ module.exports = {
       filename: 'main.html',
       chunks: ['pageTwo', 'polyfill'],
       template: './page-main/main.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'user.html',
+      chunks: ['pageUser', 'polyfill'],
+      template: './page-user/user.html',
       minify: {
         collapseWhitespace: isProd,
       },

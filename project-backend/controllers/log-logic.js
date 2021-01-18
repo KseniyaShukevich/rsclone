@@ -34,7 +34,7 @@ const getStatusLog = (req, res) => {
 }
 
 const redirect = (req, res) => {
-    res.redirect('/');
+    res.redirect('/user');
 }
 
 module.exports = {
