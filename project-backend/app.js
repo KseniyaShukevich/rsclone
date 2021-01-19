@@ -11,12 +11,12 @@ const usersRouter = require('./routes/users');
 const app = express();
 
 mongoose.connect('mongodb+srv://admin:admin@englishcluster.myxb8.mongodb.net/english?retryWrites=true&w=majority',
- {useNewUrlParser: true, useUnifiedTopology: true});
+  { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log(`we're connected!`);
+db.once('open', () => {
+  console.log('we\'re connected!');
 });
 
 // view engine setup
@@ -33,12 +33,12 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
