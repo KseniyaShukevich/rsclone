@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -52,6 +53,7 @@ module.exports = {
     pageOne: './page-registration/index.js',
     polyfill: '@babel/polyfill',
     pageTwo: './page-main/index.js',
+    training: ['./page-training/index.js', './page-training/style.scss'],
   },
   output: {
     filename: filename('js'),
@@ -72,6 +74,14 @@ module.exports = {
       filename: 'main.html',
       chunks: ['pageTwo', 'polyfill'],
       template: './page-main/main.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'training.html',
+      chunks: ['training', 'polyfill'],
+      template: './page-training/index.html',
       minify: {
         collapseWhitespace: isProd,
       },

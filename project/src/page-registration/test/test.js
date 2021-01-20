@@ -1,5 +1,6 @@
 import { Modal } from 'bootstrap';
 import request from '../../services/request';
+import regUser from '../authorization/reg';
 
 const contact = [{
   id: 2,
@@ -21,6 +22,11 @@ async function getResult() {
   console.log(data);
   console.log(dataPost);
   console.log(result);
+}
+
+function callRegistrationFunction() {
+  const registrationButton = document.querySelector('#btn-reg');
+  registrationButton.addEventListener('click', regUser);
 }
 
 function switchColorTheme() {
@@ -50,3 +56,4 @@ function setColorTheme() {
 getResult();
 switchColorTheme();
 setColorTheme();
+callRegistrationFunction();

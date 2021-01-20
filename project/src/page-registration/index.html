@@ -25,16 +25,16 @@
           <div class="card">
             <div class="card-header lead">Войдите, используя логин и пароль</div>
             <div class="card-body">
-              <form class="signup-form">
+              <form class="signup-form" action="http://localhost:3000/api/redirect" method="post" id="log">
                 <div class="mb-2">
-                  <label for="authorizationEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="authorizationEmail" aria-describedby="emailHelp" required>
+                  <label for="email-log" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email-log" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-5">
-                  <label for="authorizationPassword" class="form-label">Пароль</label>
-                  <input type="password" class="form-control" id="authorizationPassword" required>
+                  <label for="password-log" class="form-label">Пароль</label>
+                  <input type="password" class="form-control" id="password-log" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Войти</button>
+                <button type="submit" class="btn btn-primary" id="btn-log">Войти</button>
               </form>
             </div>
           </div>
@@ -52,14 +52,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form class="registration-form" id="">
+                  <form class="registration-form" action="http://localhost:3000/api/redirect" method="post" id="reg">
                     <div class="mb-2">
-                      <label for="registrationEmail" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="registrationEmail" aria-describedby="emailHelp" required>
+                      <label for="name-reg" class="form-label">Email</label>
+                      <input type="text" class="form-control" id="name-reg" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="email-reg" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email-reg" aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-5">
-                      <label for="registrationPassword" class="form-label">Пароль</label>
-                      <input type="password" class="form-control" id="registrationPassword" required>
+                      <label for="pass-reg" class="form-label">Пароль</label>
+                      <input type="password" class="form-control" id="pass-reg" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                   </form>
