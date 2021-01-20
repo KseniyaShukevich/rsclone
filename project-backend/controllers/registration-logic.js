@@ -1,8 +1,5 @@
 const bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
 const User = require('./user-schema');
-
-const db = mongoose.connection;
 
 const hashPassword = async function (password) {
   const saltRounds = 10;

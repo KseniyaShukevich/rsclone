@@ -1,55 +1,55 @@
 {
-  "name": "project-backend",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "serve": "nodemon ./bin/www"
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "mongoose": "^5.11.11",
-    "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
-  },
-  "devDependencies": {
-    "eslint": "^7.18.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "nodemon": "^2.0.7"
-  },
-  "eslintConfig": {
-    "extends": "airbnb-base",
-    "env": {
-        "es6": true,
-        "browser": true
+    "name": "project-backend",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "serve": "nodemon ./bin/www"
     },
-    "rules": {
-        "linebreak-style": [
-            "warn",
-            "windows"
-        ],
-        "brace-style": [
-            "error",
-            "stroustrup"
-        ],
-        "comma-dangle": [
-            "error",
-            "never"
-        ],
-        "no-unused-vars": [
-            "warn"
-        ],
-        "no-var": [
-            "off"
-        ],
-        "one-var": [
-            "off"
-        ]
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "express": "~4.16.1",
+        "http-errors": "~1.6.3",
+        "mongoose": "^5.11.11",
+        "morgan": "~1.9.1",
+        "pug": "2.0.0-beta11"
+    },
+    "devDependencies": {
+        "eslint": "^7.18.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "nodemon": "^2.0.7"
+    },
+    "eslintConfig": {
+        "extends": "airbnb-base",
+        "env": {
+            "es6": true,
+            "browser": true
+        },
+        "rules": {
+            "linebreak-style": [
+                "warn",
+                "windows"
+            ],
+            "brace-style": [
+                "error",
+                "stroustrup"
+            ],
+            "comma-dangle": [
+                "error",
+                "never"
+            ],
+            "no-unused-vars": [
+                "warn"
+            ],
+            "no-var": [
+                "off"
+            ],
+            "one-var": [
+                "off"
+            ]
+        }
     }
-  }
 }

@@ -9,11 +9,11 @@ const contact = [
 const id = 2;
 
 async function getResult() {
-  const data = await request('contacts');
-  const dataPost = await request('contacts', 'POST', contact);
-  const result = await request(`contacts/${id}`, 'DELETE');
+  const data = await request('/api/contacts');
+  const dataPost = await request('/api/contacts', 'POST', contact);
+  const result = await request(`/api/contacts/${id}`, 'DELETE');
 
-  const updated = await request(`contacts/${id}`, 'PUT', { ...contact, marked: true });
+  const updated = await request(`/api/contacts/${id}`, 'PUT', { ...contact, marked: true });
   // синхронизация фронтенда и бэкенда
   contact.marked = updated.marked;
 

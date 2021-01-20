@@ -21,7 +21,7 @@ async function checkUser(e) {
   const email = document.getElementById('email-log').value.trim();
   const password = document.getElementById('password-log').value.trim();
   const token = uuidv4();
-  const response = await request('log', 'POST', { email, password, token });
+  const response = await request('/api/log', 'POST', { email, password, token });
 
   checkInputs('email-log', 'password-log');
   addToLStorage(response, token);

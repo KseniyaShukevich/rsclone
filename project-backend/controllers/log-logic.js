@@ -1,11 +1,8 @@
 const bcrypt = require('bcrypt');
 
-const mongoose = require('mongoose');
 const User = require('./user-schema');
 
-const db = mongoose.connection;
-
-const updateUser = (req) => {
+const updateUserToken = (req) => {
   User.updateOne(
     { email: req.body.email },
     { $set: { token: req.body.token } },
@@ -27,7 +24,7 @@ const getStatusLog = (req, res) => {
       const isThisUser = await bcrypt.compare(req.body.password, result[0].password);
 
       if (isThisUser) {
-        updateUser(req);
+        updateUserToken(req);
         res.json({});
       }
       else {

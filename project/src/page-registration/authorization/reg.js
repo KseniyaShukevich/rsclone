@@ -5,7 +5,7 @@ import { LSTORAGEID } from '../../services/constants';
 
 async function addUser(name, email, password) {
   const token = uuidv4();
-  const result = await request('registration', 'POST', {
+  const result = await request('/api/registration', 'POST', {
     name, email, password, progress: [], token,
   });
 

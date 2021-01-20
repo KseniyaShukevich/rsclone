@@ -19,4 +19,7 @@ router.post('/api/user', logicLog.redirect);
 
 router.post('/api/registration', logicReg.regUser);
 
+// important
+router.get('/api/entry', logicContacts.redirectToEntry);
+
 module.exports = router;

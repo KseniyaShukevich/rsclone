@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/api/';
+const URL = 'http://localhost:3000';
 const LSTORAGEID = 'qwertyujn';
 
 export default URL;
