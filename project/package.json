@@ -38,8 +38,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta1",
     "@babel/runtime": "^7.12.5",
+    "@popperjs/core": "^2.6.0",
+    "bootstrap": "^5.0.0-beta1",
     "normalize.css": "^8.0.1"
   }
 }

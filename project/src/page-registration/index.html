@@ -4,53 +4,74 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Document</title>
 </head>
 
-<body>
-    <header>
-        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on" style="width: 68px;">
-            <div class="bootstrap-switch-container" style="width: 118px; margin-left: 0px;">
-                <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 50px;"></span>
-                <span class="bootstrap-switch-label" style="width: 30px;">&nbsp;</span>
-                <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 50px;"></span>
-                <input type="checkbox" name="checkbox" checked="" class="bootstrap-switch" data-on-label="" data-off-label="">
-            </div>
+<body class="vw-100 vh-100">
+    <header class="header">
+      <div class="container position-relative">
+        <h1 class="invisible">Irregular verbs</h1>
+        <div class="display-6 text-center">Irregular verbs</div>
+        <div class="form-check form-switch form-switch_color position-absolute top-50 translate-middle-y">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
         </div>
+      </div>
     </header>
 
-    <main>
-        <div>Войдите или зарегистрируйтесь</div>
-
-        <form class="signup-form">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <main class="main">
+      <div class="container h-100">
+        <div class="authorization pt-5 mb-5">
+          <div class="card">
+            <div class="card-header lead">Войдите, используя логин и пароль</div>
+            <div class="card-body">
+              <form class="signup-form">
+                <div class="mb-2">
+                  <label for="authorizationEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="authorizationEmail" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-5">
+                  <label for="authorizationPassword" class="form-label">Пароль</label>
+                  <input type="password" class="form-control" id="authorizationPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+              </form>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+        </div>
+        <div class="registration">
+          <div class="registration__preview text-center">
+            <div class="mb-3">Еще нет аккаунта? Зарегистрируйтесь</div>
+            <button type="submit" class="btn btn-primary registration-btn" data-bs-toggle="modal" data-bs-target="#registration-form">Регистрация</button>
+          </div>  
+          <div class="modal fade" id="registration-form" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content card">
+                <div class="modal-header">
+                  <div class="lead">Введите логин и пароль</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="registration-form" id="">
+                    <div class="mb-2">
+                      <label for="registrationEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="registrationEmail" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-5">
+                      <label for="registrationPassword" class="form-label">Пароль</label>
+                      <input type="password" class="form-control" id="registrationPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                  </form>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Войти</button>
-          </form>
-
-          <div>Еще нет аккаунта? Зарегистрируйтесь</div>
-          <button type="submit" class="btn btn-primary registration-btn">Зарегистрируйтесь</button>
-
-          <form class="registration-form">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Пароль</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Регистрация</button>
-          </form>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer></footer>
+    <footer class="footer"></footer>
 </body>
 
 </html>

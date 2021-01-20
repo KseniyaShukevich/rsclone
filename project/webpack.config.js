@@ -77,18 +77,18 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/assets/img'),
-    //       to: path.resolve(__dirname, 'dist/img'),
-    //     },
-    //     {
-    //       from: path.resolve(__dirname, 'src/assets/audio'),
-    //       to: path.resolve(__dirname, 'dist/audio'),
-    //     },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist/favicon.ico'),
+        },
+        // {
+        //   from: path.resolve(__dirname, 'src/assets/audio'),
+        //   to: path.resolve(__dirname, 'dist/audio'),
+        // },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),

@@ -1,10 +1,12 @@
+import { Modal } from 'bootstrap';
 import request from '../../services/request';
 
-const contact = [
-  {
-    id: 2, name: 'ssfdf', value: 'fffffAf', marked: false,
-  },
-];
+const contact = [{
+  id: 2,
+  name: 'ssfdf',
+  value: 'fffffAf',
+  marked: false,
+}];
 const id = 2;
 
 async function getResult() {
@@ -21,14 +23,30 @@ async function getResult() {
   console.log(result);
 }
 
-function showRegistrationForm() {
-  const registrationForm = document.querySelector('.registration-form');
-  const registrationButton = document.querySelector('.registration-btn');
+function switchColorTheme() {
+  const switchThemeButton = document.querySelector('.form-switch_color');
 
-  registrationButton.addEventListener('click', () => {
-    registrationForm.style.display = 'block';
+  switchThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem('colorTheme', 'dark');
+    } else {
+      localStorage.setItem('colorTheme', 'light');
+    }
   });
 }
 
+function setColorTheme() {
+  const colorValue = localStorage.getItem('colorTheme');
+  const switchThemeInput = document.querySelector('.form-switch_color input');
+
+  if (colorValue === 'dark') {
+    document.body.classList.add('dark');
+    switchThemeInput.setAttribute('checked', '');
+  }
+}
+
 getResult();
-showRegistrationForm();
+switchColorTheme();
+setColorTheme();
