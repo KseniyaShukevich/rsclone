@@ -15,25 +15,25 @@ async function addUser(name, email, password) {
 
 async function checkUser(name, email, password, messageError) {
   if (name && (/^[a-z0-9_.]+@\w+\.\w+$/i.test(email)) && (password.length > 5)) {
-    const form = document.getElementById('reg');
+    const form = document.querySelector('#reg');
     const result = await addUser(name, email, password);
 
     if (!result) {
-      messageError.classList.add('display-block');
+      messageError.classList.add('opacity-1');
     } else {
       form.submit();
     }
   } else {
-    messageError.classList.add('display-block');
+    messageError.classList.add('opacity-1');
   }
 }
 
 export default async function regUser(e) {
   e.preventDefault();
-  const name = document.getElementById('name-reg').value.trim();
-  const email = document.getElementById('email-reg').value.trim();
-  const password = document.getElementById('pass-reg').value.trim();
-  const messageError = document.getElementById('error-reg');
+  const name = document.querySelector('#name-reg').value.trim();
+  const email = document.querySelector('#email-reg').value.trim();
+  const password = document.querySelector('#pass-reg').value.trim();
+  const messageError = document.querySelector('#error-reg');
 
   checkInputs('name-reg', 'email-reg', 'pass-reg');
   checkUser(name, email, password, messageError);

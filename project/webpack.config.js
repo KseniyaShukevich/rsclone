@@ -1,4 +1,5 @@
 const path = require('path');
+// const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -53,6 +54,7 @@ module.exports = {
     polyfill: '@babel/polyfill',
     pageTwo: './page-main/index.js',
     pageUser: './page-user/index.js',
+    training: ['./page-training/index.js', './page-training/style.scss'],
   },
   output: {
     filename: filename('js'),
@@ -85,15 +87,23 @@ module.exports = {
         collapseWhitespace: isProd,
       },
     }),
+    new HTMLWebpackPlugin({
+      filename: 'training.html',
+      chunks: ['training', 'polyfill'],
+      template: './page-training/index.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
     new CleanWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/assets/img'),
-    //       to: path.resolve(__dirname, 'dist/img'),
-    //     },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist/favicon.ico'),
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
