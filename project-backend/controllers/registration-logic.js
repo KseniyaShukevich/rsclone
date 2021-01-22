@@ -12,6 +12,8 @@ const sendStatus = async function (res, dataUser, user) {
   if (!user.length) {
     const data = dataUser;
     data.progress = [];
+    data.image = '';
+    data.imagePath = '';
     data.password = await hashPassword(dataUser.password);
     (new User(data)).save();
     res.json({});

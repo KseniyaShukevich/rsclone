@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
   progress: Array,
+  image: String,
+  imagePath: String,
   token: String
 },
 {
