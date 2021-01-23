@@ -1,0 +1,22 @@
+{
+  "name": "rsclone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KseniyaShukevich/rsclone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KseniyaShukevich/rsclone/issues"
+  },
+  "homepage": "https://github.com/KseniyaShukevich/rsclone#readme"
+}

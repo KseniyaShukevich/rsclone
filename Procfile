@@ -1,1 +1,1 @@
-web: cd project-backend; npm run start
+web: ./project-backend npm run start
