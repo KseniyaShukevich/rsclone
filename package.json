@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-
+    "build": "cd project && npm i && npm run build && cd ../project-backend && npm i"
   },
   "repository": {
     "type": "git",
