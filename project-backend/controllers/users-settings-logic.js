@@ -16,10 +16,10 @@ const updateUserImage = (req, res, result) => {
         return null;
       }
     );
-    res.json({
-      oldImage: result[0].image,
-      newImage: req.file.filename
-    });
+    // res.json({
+    //   oldImage: result[0].image,
+    //   newImage: req.file.filename
+    // });
   }
 };
 
@@ -32,13 +32,10 @@ const updateImage = async (req, res) => {
         await unlinkAsync(imagePath);
       }
       updateUserImage(req, res, result);
-
       return null;
     });
   }
-  else {
-    res.json({});
-  }
+  res.redirect('/user');
 };
 
 const updateName = (req, res) => {
@@ -61,6 +58,15 @@ const updateEmail = (req, res) => {
       return null;
     }
   );
+};
+
+const checkEmail = (req, res) => {
+  User.find({ email: req.body.email }, async (err, result) => {
+    if (err) return console.log(err);
+
+    res.json(result);
+    return null;
+  });
 };
 
 const hashPassword = async (password) => {
@@ -120,16 +126,15 @@ const checkPassword = (req, res) => {
 };
 
 const getPageUserSettings = (req, res) => {
-  console.log('AAAAAA');
   res.sendFile(path.join(__dirname, '../../project/dist/user-settings.html'));
 };
 
 module.exports = {
   updateImage,
   updatePass,
+  checkEmail,
   updateEmail,
   updateName,
   getPageUserSettings,
-  // postDataUser,
   checkPassword
 };

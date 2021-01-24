@@ -18,6 +18,8 @@ const router = express.Router();
 
 router.get('/', logicSettings.getPageUserSettings);
 
+router.post('/api/email', logicSettings.checkEmail);
+
 router.put('/api/name', logicSettings.updateName);
 
 router.put('/api/email', logicSettings.updateEmail);

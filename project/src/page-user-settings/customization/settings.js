@@ -13,6 +13,7 @@ const newPassErrorMessage = document.querySelector('#new-pass-error-message');
 const inputRepeatNewPass = document.querySelector('#repeat-new-password');
 const repeatNewPassErrorMessage = document.querySelector('#repeat-new-pass-error-message');
 const saveErrorMessage = document.querySelector('#save-error-message');
+const emailErrorMessageReg = document.querySelector('#email-error-message-reg');
 
 (function addUserToken() {
   const userToken = document.querySelector('#user-token');
@@ -47,7 +48,20 @@ function changeUserEmail() {
   }
 }
 
-function checkEmailFormat() {
+async function isFreeEmail(email) {
+  if ((/^[a-z0-9_.]+@\w+\.\w+$/i.test(email))) {
+    const result = await request('/settings/api/email', 'POST', { email });
+    if (result.length && !emailErrorMessageReg.classList.contains('display-block')) {
+      emailErrorMessageReg.classList.add('display-block');
+    }
+    if (result.length) {
+      return false;
+    }
+  }
+  return true;
+}
+
+async function checkEmailFormat() {
   const email = inputEmail.value.trim();
   if (email && !(/^[a-z0-9_.]+@\w+\.\w+$/i.test(email))) {
     if (!emailErrorMessage.classList.contains('display-block')) {
@@ -56,6 +70,7 @@ function checkEmailFormat() {
     }
     return false;
   }
+  isFreeEmail(email);
   emailErrorMessage.classList.remove('display-block');
   return true;
 }
@@ -132,8 +147,10 @@ function isCorrectNewPass() {
 
 async function changeUserData(e) {
   e.preventDefault();
+  const email = inputEmail.value.trim();
   const isCorrectPass = await checkCurrPassword();
-  if (checkEmailFormat() && isCorrectPass && isCorrectNewPass()) {
+  const isFree = await isFreeEmail(email);
+  if (checkEmailFormat() && isCorrectPass && isCorrectNewPass() && isFree) {
     const form = document.querySelector('#user-settings');
     changeUserName();
     changeUserEmail();
@@ -148,6 +165,9 @@ btnSave.addEventListener('click', changeUserData);
 inputImage.addEventListener('change', loadImage);
 inputEmail.addEventListener('blur', checkEmailFormat);
 inputEmail.addEventListener('focus', (e) => { deleteError(e, emailErrorMessage); });
+inputEmail.addEventListener('focus', () => {
+  emailErrorMessageReg.classList.remove('display-block');
+});
 inputCurrPass.addEventListener('blur', checkCurrPassword);
 inputCurrPass.addEventListener('focus', (e) => { deleteError(e, currPassErrorMessage); });
 inputNewPass.addEventListener('blur', checkNewPassword);
