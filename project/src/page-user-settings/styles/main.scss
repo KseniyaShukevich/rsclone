@@ -1,0 +1,30 @@
+* {
+    padding: 0 0;
+    margin: 0 0;
+    box-sizing: border-box;
+    -ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.error-message {
+    display: none;
+    color: rgba(225, 0, 0, 0.6);
+}
+
+.display-block {
+    display: block;
+}
+
+.error-color {
+    border-color: rgba(225, 0, 0, 0.6);
+}
+
+// .error-border-color {
+//     border-color: rgba(225, 0, 0, 0.6);
+// }

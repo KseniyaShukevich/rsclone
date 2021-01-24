@@ -32,7 +32,7 @@ function loadImage() {
 function changeUserName() {
   const name = document.querySelector('#new-name').value.trim();
   if (name) {
-    request('/user/api/changeUserName',
+    request('/settings/api/name',
       'PUT',
       { name, token: getUserToken() });
   }
@@ -41,7 +41,7 @@ function changeUserName() {
 function changeUserEmail() {
   const email = inputEmail.value.trim();
   if (email) {
-    request('/user/api/changeUserEmail',
+    request('/settings/api/email',
       'PUT',
       { email, token: getUserToken() });
   }
@@ -67,7 +67,7 @@ function deleteError(e, el) {
 
 function updateUserPass(currPass, newPass, repeatNewPass) {
   if ((newPass === repeatNewPass) && (newPass.length > 5) && (repeatNewPass.length > 5)) {
-    request('/user/api/updatePass', 'POST', {
+    request('/settings/api/password', 'PUT', {
       currPass, newPass, token: getUserToken(),
     });
   }
@@ -76,7 +76,7 @@ function updateUserPass(currPass, newPass, repeatNewPass) {
 async function checkCurrPassword() {
   const currPass = inputCurrPass.value.trim();
   if (currPass) {
-    const result = await request('/user/api/password', 'POST', {
+    const result = await request('/settings/api/password', 'POST', {
       currPass, token: getUserToken(),
     });
     if (!result.password) {

@@ -54,7 +54,9 @@ module.exports = {
     polyfill: '@babel/polyfill',
     pageTwo: './page-main/index.js',
     pageUser: './page-user/index.js',
+    pageUserSettings: './page-user-settings/index.js',
     training: ['./page-training/index.js', './page-training/style.scss'],
+    page404: './page-not-found/index.js',
   },
   output: {
     filename: filename('js'),
@@ -80,6 +82,14 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
+      filename: 'user-settings.html',
+      chunks: ['pageUserSettings', 'polyfill'],
+      template: './page-user-settings/user-settings.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
       filename: 'user.html',
       chunks: ['pageUser', 'polyfill'],
       template: './page-user/user.html',
@@ -91,6 +101,14 @@ module.exports = {
       filename: 'training.html',
       chunks: ['training', 'polyfill'],
       template: './page-training/index.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: '404.html',
+      chunks: ['page404', 'polyfill'],
+      template: './page-not-found/404.html',
       minify: {
         collapseWhitespace: isProd,
       },
