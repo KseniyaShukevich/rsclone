@@ -30,6 +30,13 @@ function loadImage() {
   }
 }
 
+function updateImage() {
+  const formElement = document.querySelector('#user-settings');
+  const req = new XMLHttpRequest();
+  req.open('POST', 'settings/api/image');
+  req.send(new FormData(formElement));
+}
+
 function changeUserName() {
   const name = document.querySelector('#new-name').value.trim();
   if (name) {
@@ -151,11 +158,10 @@ async function changeUserData(e) {
   const isCorrectPass = await checkCurrPassword();
   const isFree = await isFreeEmail(email);
   if (checkEmailFormat() && isCorrectPass && isCorrectNewPass() && isFree) {
-    const form = document.querySelector('#user-settings');
+    updateImage();
     changeUserName();
     changeUserEmail();
     changePassword();
-    form.submit();
   } else {
     saveErrorMessage.classList.add('display-block');
   }

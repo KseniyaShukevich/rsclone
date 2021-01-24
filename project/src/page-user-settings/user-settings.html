@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/api/entry" id="exit">Выйти</a>
-    <form action="/settings/api/image" method="POST" enctype="multipart/form-data" id="user-settings">
+    <a href="/api/entry">Выйти</a>
+    <a href="/user">Профиль</a>
+    <form id="user-settings">
         <input type="file" name="file" id="file">
         <input type="text" name="token" id="user-token" style="display: none;">
-        <img style="width: 100px; height: 100px" id="image-preview"></img>
+        <div class="container-image">
+            <img style="height: 200px; min-width: 100px;; background: blue;" id="image-preview"></img>
+        </div>
         <div style="height: 150px; width: 150px">
             <label for="new-name">Сменить имя</label>
             <input name="new-name"  type="text" id="new-name">

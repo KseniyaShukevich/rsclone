@@ -16,10 +16,6 @@ const updateUserImage = (req, res, result) => {
         return null;
       }
     );
-    // res.json({
-    //   oldImage: result[0].image,
-    //   newImage: req.file.filename
-    // });
   }
 };
 
@@ -27,6 +23,7 @@ const updateImage = async (req, res) => {
   if (req.file) {
     User.find({ token: req.body.token }, async (err, result) => {
       if (err) return console.log(err);
+
       const { image, imagePath } = result[0];
       if (image) {
         await unlinkAsync(imagePath);
