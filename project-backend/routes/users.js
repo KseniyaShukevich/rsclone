@@ -29,6 +29,8 @@ router.post('/api/updatePass', logicUser.checkAndUpdatePass);
 
 router.post('/api/image', upload.single('file'), logicUser.changeImage);
 
+router.post('/api/password', logicUser.checkPassword);
+
 // router.put('/api/image', logicUser.getImage);
 
 module.exports = router;

@@ -2,19 +2,22 @@ import getUserToken from '../../services/data-user';
 import request from '../../services/request';
 
 const btnSave = document.querySelector('#btn-save');
-
+const inputEmail = document.querySelector('#new-email');
 const inputImage = document.querySelector('#file');
 const containerImagePreview = document.querySelector('#image-preview');
+const emailErrorMessage = document.querySelector('#email-error-message');
+const inputCurrPass = document.querySelector('#curr-password');
+const currPassErrorMessage = document.querySelector('#currPass-error-message');
+const inputNewPass = document.querySelector('#new-password');
+const newPassErrorMessage = document.querySelector('#new-pass-error-message');
+const inputRepeatNewPass = document.querySelector('#repeat-new-password');
+const repeatNewPassErrorMessage = document.querySelector('#repeat-new-pass-error-message');
+const saveErrorMessage = document.querySelector('#save-error-message');
 
-// (async function addNameOfOldImage() {
-//   const oldImage = document.querySelector('#old-image');
-//   const response = await request('/user/api/image', 'PUT', { token: getUserToken() });
-//   console.log(response.image);
-//   oldImage.value = response.image;
-// }());
-
-const userToken = document.querySelector('#user-token');
-userToken.value = getUserToken();
+(function addUserToken() {
+  const userToken = document.querySelector('#user-token');
+  userToken.value = getUserToken();
+}());
 
 function loadImage() {
   if (inputImage.files && inputImage.files[0]) {
@@ -26,47 +29,128 @@ function loadImage() {
   }
 }
 
-inputImage.addEventListener('change', loadImage);
-
-async function changeUserName() {
-  const name = document.getElementById('new-name').value.trim();
+function changeUserName() {
+  const name = document.querySelector('#new-name').value.trim();
   if (name) {
-    const result = await request('/user/api/changeUserName',
+    request('/user/api/changeUserName',
       'PUT',
       { name, token: getUserToken() });
   }
 }
 
-async function changeUserEmail() {
-  const email = document.getElementById('new-email').value.trim();
-  if (/^[a-z0-9_.]+@\w+\.\w+$/i.test(email)) {
-    const result = await request('/user/api/changeUserEmail',
+function changeUserEmail() {
+  const email = inputEmail.value.trim();
+  if (email) {
+    request('/user/api/changeUserEmail',
       'PUT',
       { email, token: getUserToken() });
   }
 }
 
-async function updateUserPass(currPass, newPass) {
-  const result = await request('/user/api/updatePass', 'POST', {
-    currPass, newPass, token: getUserToken(),
-  });
-  console.log(result);
-  console.log(typeof result.password);
+function checkEmailFormat() {
+  const email = inputEmail.value.trim();
+  if (email && !(/^[a-z0-9_.]+@\w+\.\w+$/i.test(email))) {
+    if (!emailErrorMessage.classList.contains('display-block')) {
+      emailErrorMessage.classList.add('display-block');
+      inputEmail.classList.add('error-color');
+    }
+    return false;
+  }
+  emailErrorMessage.classList.remove('display-block');
+  return true;
 }
 
-function changePassword() {
-  const currPass = document.getElementById('curr-password').value.trim();
-  const newPass = document.getElementById('new-password').value.trim();
-  if (currPass && newPass) {
-    updateUserPass(currPass, newPass);
+function deleteError(e, el) {
+  e.target.classList.remove('error-color');
+  el.classList.remove('display-block');
+}
+
+function updateUserPass(currPass, newPass, repeatNewPass) {
+  if ((newPass === repeatNewPass) && (newPass.length > 5) && (repeatNewPass.length > 5)) {
+    request('/user/api/updatePass', 'POST', {
+      currPass, newPass, token: getUserToken(),
+    });
   }
 }
 
-function changeUserData(e) {
-  // e.preventDefault();
-  changeUserName();
-  changeUserEmail();
-  changePassword();
+async function checkCurrPassword() {
+  const currPass = inputCurrPass.value.trim();
+  if (currPass) {
+    const result = await request('/user/api/password', 'POST', {
+      currPass, token: getUserToken(),
+    });
+    if (!result.password) {
+      if (!inputCurrPass.classList.contains('error-color')) {
+        inputCurrPass.classList.add('error-color');
+        currPassErrorMessage.classList.add('display-block');
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+function checkNewPassword() {
+  const newPass = inputNewPass.value.trim();
+  if (newPass && (newPass.length < 6)) {
+    if (!inputNewPass.classList.contains('error-color')) {
+      inputNewPass.classList.add('error-color');
+      newPassErrorMessage.classList.add('display-block');
+    }
+  }
+}
+
+function checkRepeatNewPass() {
+  const newPass = inputNewPass.value.trim();
+  const repeatNewPass = inputRepeatNewPass.value.trim();
+  if (newPass !== repeatNewPass) {
+    if (!inputRepeatNewPass.classList.contains('error-color')) {
+      inputRepeatNewPass.classList.add('error-color');
+      repeatNewPassErrorMessage.classList.add('display-block');
+    }
+  }
+}
+
+function changePassword() {
+  const currPass = inputCurrPass.value.trim();
+  const newPass = inputNewPass.value.trim();
+  const repeatNewPass = inputRepeatNewPass.value.trim();
+  if (currPass && newPass && repeatNewPass) {
+    updateUserPass(currPass, newPass, repeatNewPass);
+  }
+}
+
+function isCorrectNewPass() {
+  const newPass = inputNewPass.value.trim();
+  const repeatNewPass = inputRepeatNewPass.value.trim();
+  if (((newPass === repeatNewPass) && (newPass.length > 5) && (repeatNewPass.length > 5))
+   || (!newPass && !repeatNewPass)) {
+    return true;
+  }
+  return false;
+}
+
+async function changeUserData(e) {
+  e.preventDefault();
+  const isCorrectPass = await checkCurrPassword();
+  if (checkEmailFormat() && isCorrectPass && isCorrectNewPass()) {
+    const form = document.querySelector('#user-settings');
+    changeUserName();
+    changeUserEmail();
+    changePassword();
+    form.submit();
+  } else {
+    saveErrorMessage.classList.add('display-block');
+  }
 }
 
 btnSave.addEventListener('click', changeUserData);
+inputImage.addEventListener('change', loadImage);
+inputEmail.addEventListener('blur', checkEmailFormat);
+inputEmail.addEventListener('focus', (e) => { deleteError(e, emailErrorMessage); });
+inputCurrPass.addEventListener('blur', checkCurrPassword);
+inputCurrPass.addEventListener('focus', (e) => { deleteError(e, currPassErrorMessage); });
+inputNewPass.addEventListener('blur', checkNewPassword);
+inputNewPass.addEventListener('focus', (e) => { deleteError(e, newPassErrorMessage); });
+inputRepeatNewPass.addEventListener('blur', checkRepeatNewPass);
+inputRepeatNewPass.addEventListener('focus', (e) => { deleteError(e, repeatNewPassErrorMessage); });

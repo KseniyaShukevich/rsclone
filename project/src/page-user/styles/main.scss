@@ -11,3 +11,20 @@
 *:focus {
     outline: none;
 }
+
+.error-message {
+    display: none;
+    color: rgba(225, 0, 0, 0.6);
+}
+
+.display-block {
+    display: block;
+}
+
+.error-color {
+    border-color: rgba(225, 0, 0, 0.6);
+}
+
+// .error-border-color {
+//     border-color: rgba(225, 0, 0, 0.6);
+// }

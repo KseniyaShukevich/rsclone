@@ -120,11 +120,30 @@ const checkAndUpdatePass = (req, res) => {
   });
 };
 
+const checkPassword = (req, res) => {
+  User.find({ token: req.body.token }, async (err, result) => {
+    if (err) return console.log(err);
+
+    if (!result.length) {
+      res.status(401).end();
+    }
+
+    const isThisPass = await bcrypt.compare(req.body.currPass, result[0].password);
+    if (isThisPass) {
+      res.json({ password: 1 });
+    }
+
+    res.json({ password: 0 });
+    return null;
+  });
+};
+
 module.exports = {
   changeImage,
   checkAndUpdatePass,
   changeEmail,
   changeName,
   getPageUser,
-  postDataUser
+  postDataUser,
+  checkPassword
 };

@@ -7,15 +7,9 @@
 </head>
 <body>
     <a href="/api/entry" id="exit">Выйти</a>
-    <!-- <form action="/user/api/image" method="POST" enctype="multipart/form-data" id="upload-form"> -->
-        <!-- <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg">
-        <input type="text" name="token" id="user-token" style="display: none;">
-        <img style="width: 100px; height: 100px" id="image-preview"></img> -->
-    <!-- </form> -->
     <form action="/user/api/image" method="POST" enctype="multipart/form-data" id="user-settings">
         <input type="file" name="file" id="file">
         <input type="text" name="token" id="user-token" style="display: none;">
-        <!-- <input type="text" name="old-image" id="old-image" style="display: none;"> -->
         <img style="width: 100px; height: 100px" id="image-preview"></img>
         <div style="height: 150px; width: 150px">
             <label for="new-name">Сменить имя</label>
@@ -24,14 +18,31 @@
         <div style="height: 150px; width: 150px">
             <label for="new-email">Сменить почту</label>
             <input  name="email" type="email" id="new-email">
+            <div id="email-error-message" class="error-message">
+                Неверный формат адреса почты.
+            </div>
         </div>
-        <div style="height: 150px; width: 150px">
+        <div style="width: 200px">
             <label for="curr-password">Сменить пароль</label>
             <input  name="curr-password" type="password" id="curr-password">
-            <label for="new-password"></label>
+            <div id="currPass-error-message" class="error-message">
+                Неверный пароль.
+            </div>
+            <label for="new-password">Новый пароль</label>
             <input  name="new-password" type="password" id="new-password">
+            <div id="new-pass-error-message" class="error-message">
+                Длина пароля донжна быть не меньше 6-ти символов.
+            </div>
+            <label for="repeat-new-password">Повторите пароль</label>
+            <input name="repeat-new-password" type="password" id="repeat-new-password">
+            <div id="repeat-new-pass-error-message" class="error-message">
+                Не совпадают пароли.
+            </div>
         </div>
         <button type="submit" id="btn-save">Сохранить</button>
+        <div class="error-message" id="save-error-message">
+            Не сохранено. Проверьте правильность введенных данных.
+        </div>
     </form>
 </body>
 </html>
