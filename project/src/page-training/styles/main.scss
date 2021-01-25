@@ -1,0 +1,27 @@
+.btn-voice, 
+.btn-verb-form { margin-bottom: 10px; }
+
+.btn-voice__text { display: inline-block; }
+
+.btn-choice,
+.btn-select-translate, 
+.btn-letter { 
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.select-input__first-form, 
+.select-input__second-form, 
+.three-forms__first, 
+.three-forms__second { margin-bottom: 10px; }
+
+.footer {
+    display: flex;
+    width: 100%;
+    min-height: 6%;
+    max-height: 80px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #1d253b;
+}
