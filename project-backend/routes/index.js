@@ -5,21 +5,12 @@ const logicReg = require('../controllers/registration-logic');
 
 const router = express.Router();
 
-router.get('/api/contacts', logicContacts.getContacts);
-
-router.post('/api/contacts', logicContacts.postContacts);
-
-router.delete('/api/contacts/:id', logicContacts.deleteContacts);
-
-router.put('/api/contacts/:id', logicContacts.putContacts);
-
 router.post('/api/log', logicLog.getStatusLog);
 
 router.post('/api/user', logicLog.redirect);
 
 router.post('/api/registration', logicReg.regUser);
 
-// important
 router.get('/api/entry', logicContacts.redirectToEntry);
 
 module.exports = router;
