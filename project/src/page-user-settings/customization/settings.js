@@ -14,6 +14,7 @@ const inputRepeatNewPass = document.querySelector('#repeat-new-password');
 const repeatNewPassErrorMessage = document.querySelector('#repeat-new-pass-error-message');
 const saveErrorMessage = document.querySelector('#save-error-message');
 const emailErrorMessageReg = document.querySelector('#email-error-message-reg');
+const successSaveMessage = document.querySelector('#success-save-message');
 
 (function addUserToken() {
   const userToken = document.querySelector('#user-token');
@@ -152,19 +153,40 @@ function isCorrectNewPass() {
   return false;
 }
 
+function getSuccessMessage() {
+  successSaveMessage.classList.add('display-block');
+  setTimeout(() => {
+    successSaveMessage.classList.remove('display-block');
+  }, 3000);
+}
+
+function getErrorMessage() {
+  saveErrorMessage.classList.add('display-block');
+  setTimeout(() => {
+    saveErrorMessage.classList.remove('display-block');
+  }, 3000);
+}
+
+function updateUser() {
+  updateImage();
+  changeUserName();
+  changeUserEmail();
+  changePassword();
+}
+
 async function changeUserData(e) {
   e.preventDefault();
   const email = inputEmail.value.trim();
   const isCorrectPass = await checkCurrPassword();
   const isFree = await isFreeEmail(email);
-  if (checkEmailFormat() && isCorrectPass && isCorrectNewPass() && isFree) {
-    updateImage();
-    changeUserName();
-    changeUserEmail();
-    changePassword();
+  const isValidEmail = await checkEmailFormat();
+  if (isValidEmail && isCorrectPass && isCorrectNewPass() && isFree) {
+    updateUser();
+    getSuccessMessage();
   } else {
-    saveErrorMessage.classList.add('display-block');
+    getErrorMessage();
   }
+  e.target.blur();
 }
 
 btnSave.addEventListener('click', changeUserData);
