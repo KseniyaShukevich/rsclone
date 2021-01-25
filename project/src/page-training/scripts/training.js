@@ -1,4 +1,4 @@
-const items = document.querySelector('.items');
+/* const items = document.querySelector('.items');
 let currentSlide = 0;
 const turnNext = (direction) => {
   if (direction) {
@@ -12,3 +12,10 @@ const turnNext = (direction) => {
 
 document.querySelector('.arrow.right').onclick = () => turnNext(true);
 document.querySelector('.arrow.left').onclick = () => turnNext(false);
+ */
+
+/* const myCarousel = document.querySelector('#carouselExampleControls');
+const carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 2000,
+  wrap: false,
+}); */

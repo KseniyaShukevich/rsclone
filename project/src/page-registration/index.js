@@ -4,3 +4,4 @@ import './test/test';
 import '../services/request';
 import './authorization/log';
 import './authorization/reg';
+import '../scripts/switcher.js';
