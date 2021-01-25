@@ -9,7 +9,8 @@ const postDataUser = (req, res) => {
       const userData = {
         name: result[0].name,
         progress: result[0].progress,
-        email: result[0].email
+        email: result[0].email,
+        image: result[0].image
       };
 
       res.json([userData]);
