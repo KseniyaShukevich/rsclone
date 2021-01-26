@@ -10,6 +10,8 @@ function fillUserAccount(dataUser) {
   userName.textContent = dataUser[0].name;
   if (dataUser[0].image) {
     userPhoto.style.backgroundImage = `url("./${dataUser[0].image}")`;
+  } else {
+    userPhoto.style.backgroundImage = 'url("./blank_photo.jpg")';
   }
 }
 

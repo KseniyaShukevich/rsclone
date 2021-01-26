@@ -1,5 +1,4 @@
 const path = require('path');
-// const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -56,7 +55,7 @@ module.exports = {
     pageUser: './page-user/index.js',
     pageUserSettings: './page-user-settings/index.js',
     training: ['./page-training/index.js', './page-training/style.scss'],
-    page404: './page-not-found/index.js',
+    // page404: './page-not-found/index.js',
   },
   output: {
     filename: filename('js'),
@@ -105,20 +104,24 @@ module.exports = {
         collapseWhitespace: isProd,
       },
     }),
-    new HTMLWebpackPlugin({
-      filename: '404.html',
-      chunks: ['page404', 'polyfill'],
-      template: './page-not-found/404.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),
+    // new HTMLWebpackPlugin({
+    //   filename: '404.html',
+    //   chunks: ['page404', 'polyfill'],
+    //   template: './page-not-found/404.html',
+    //   minify: {
+    //     collapseWhitespace: isProd,
+    //   },
+    // }),
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist/favicon.ico'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/images'),
+          to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),
