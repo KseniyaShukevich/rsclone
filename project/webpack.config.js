@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -53,7 +52,10 @@ module.exports = {
     pageOne: './page-registration/index.js',
     polyfill: '@babel/polyfill',
     pageTwo: './page-main/index.js',
+    pageUser: './page-user/index.js',
+    pageUserSettings: './page-user-settings/index.js',
     training: ['./page-training/index.js', './page-training/style.scss'],
+    // page404: './page-not-found/index.js',
   },
   output: {
     filename: filename('js'),
@@ -79,6 +81,22 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
+      filename: 'user-settings.html',
+      chunks: ['pageUserSettings', 'polyfill'],
+      template: './page-user-settings/user-settings.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'user.html',
+      chunks: ['pageUser', 'polyfill'],
+      template: './page-user/user.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
       filename: 'training.html',
       chunks: ['training', 'polyfill'],
       template: './page-training/index.html',
@@ -93,10 +111,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist/favicon.ico'),
         },
-        // {
-        //   from: path.resolve(__dirname, 'src/assets/audio'),
-        //   to: path.resolve(__dirname, 'dist/audio'),
-        // },
+        {
+          from: path.resolve(__dirname, 'src/images'),
+          to: path.resolve(__dirname, 'dist/'),
+        },
       ],
     }),
     new MiniCssExtractPlugin({

@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+
+const router = express.Router();
+const logicUser = require('../controllers/users-logic');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', logicUser.getPageUser);
+
+router.post('/api/userData', logicUser.postDataUser);
 
 module.exports = router;

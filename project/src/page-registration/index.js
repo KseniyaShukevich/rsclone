@@ -1,6 +1,6 @@
 import 'bootstrap';
 import './styles/index.scss';
-import './test/test';
+import './logic';
 import '../services/request';
 import './authorization/log';
 import './authorization/reg';

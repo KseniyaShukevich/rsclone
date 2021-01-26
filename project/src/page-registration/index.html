@@ -25,14 +25,17 @@
           <div class="card">
             <div class="card-header lead">Войдите, используя логин и пароль</div>
             <div class="card-body">
-              <form class="signup-form" action="http://localhost:3000/api/redirect" method="post" id="log">
+              <form class="signup-form" action="/api/user" method="post" id="log">
                 <div class="mb-2">
                   <label for="email-log" class="form-label">Email</label>
                   <input type="email" class="form-control" id="email-log" aria-describedby="emailHelp" required>
                 </div>
-                <div class="mb-5">
+                <div class="mb-0">
                   <label for="password-log" class="form-label">Пароль</label>
                   <input type="password" class="form-control" id="password-log" required>
+                </div>
+                <div class="message-error" id="error-log">
+                  Неверный адрес почты или пароль.
                 </div>
                 <button type="submit" class="btn btn-primary" id="btn-log">Войти</button>
               </form>
@@ -42,8 +45,8 @@
         <div class="registration">
           <div class="registration__preview text-center">
             <div class="mb-3">Еще нет аккаунта? Зарегистрируйтесь</div>
-            <button type="submit" class="btn btn-primary registration-btn" data-bs-toggle="modal" data-bs-target="#registration-form">Регистрация</button>
-          </div>  
+            <button type="submit" id="get-reg-form" class="btn btn-primary registration-btn" data-bs-toggle="modal" data-bs-target="#registration-form">Регистрация</button>
+          </div>
           <div class="modal fade" id="registration-form" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content card">
@@ -52,7 +55,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form class="registration-form" action="http://localhost:3000/api/redirect" method="post" id="reg">
+                  <form class="registration-form" action="/api/user" method="post" id="reg">
                     <div class="mb-2">
                       <label for="name-reg" class="form-label">Имя</label>
                       <input type="text" class="form-control" id="name-reg" aria-describedby="emailHelp" required>
@@ -61,11 +64,14 @@
                       <label for="email-reg" class="form-label">Email</label>
                       <input type="email" class="form-control" id="email-reg" aria-describedby="emailHelp" required>
                     </div>
-                    <div class="mb-5">
+                    <div class="mb-0">
                       <label for="pass-reg" class="form-label">Пароль</label>
                       <input type="password" class="form-control" id="pass-reg" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    <div class="message-error" id="error-reg">
+                      Ошибка при регистрации. Убедитесь, что данные верны.
+                    </div>
+                    <button type="submit" id="btn-reg" class="btn btn-primary">Зарегистрироваться</button>
                   </form>
                 </div>
               </div>

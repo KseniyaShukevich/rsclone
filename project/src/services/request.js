@@ -1,4 +1,4 @@
-import URL from './url';
+import URL from './constants';
 
 export default async function request(url, method = 'GET', data = null) {
   const headers = {};
