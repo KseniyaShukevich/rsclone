@@ -1,0 +1,576 @@
+[1mdiff --cc project/src/page-training/index.html[m
+[1mindex d4a13ef,ab51c58..0000000[m
+[1m--- a/project/src/page-training/index.html[m
+[1m+++ b/project/src/page-training/index.html[m
+[36m@@@ -8,121 -9,134 +9,184 @@@[m
+    <link rel="stylesheet" href="style.scss">[m
+    <title>Training</title>[m
+  </head>[m
+[32m++<<<<<<< HEAD[m
+[32m +<body>[m
+[32m +    <header class="header">[m
+[32m +      <h2 class="percentage">100%</h2>[m
+[32m +    </header>[m
+[32m +    <main class="main">[m
+[32m +      <div class="slider-wrapper">[m
+[32m +        <div class="items">[m
+[32m +          <div class="item task-1" style="background-color: red;">[m
+[32m +            <h3>Возникать, происходить</h3>[m
+[32m +            <div id="test-speak">[m
+[32m +              <div style="border: 2px solid black">[m
+[32m +                <p>arise</p>[m
+[32m +                <i class="material-icons">play_arrow</i>[m
+[32m +              </div>[m
+[32m +              <div style="border: 2px solid black">[m
+[32m +                <p>arose</p>[m
+[32m +                <i class="material-icons">play_arrow</i>[m
+[32m +              </div>[m
+[32m +              <div style="border: 2px solid black">[m
+[32m +                <p>arisen</p>[m
+[32m +                <i class="material-icons">play_arrow</i>[m
+[32m++=======[m
+[32m+ <body class="vw-100 vh-100 d-flex flex-column justify-content-between">[m
+[32m+   <header class="header">[m
+[32m+     <div class="container position-relative">[m
+[32m+       <h1 class="invisible">Irregular verbs</h1>[m
+[32m+       <div class="display-6 text-center">Irregular verbs</div>[m
+[32m+       <div class="form-check form-switch form-switch_color position-absolute top-50 translate-middle-y">[m
+[32m+         <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">[m
+[32m+       </div>[m
+[32m+     </div>[m
+[32m+   </header>[m
+[32m+     <main class="main h-100">[m
+[32m+       <div class="container h-100">[m
+[32m+         <div id="carousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-slide="false">[m
+[32m+           <div class="carousel-inner h-100">[m
+[32m+             <div class="carousel-item h-100 active">[m
+[32m+               <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">[m
+[32m+                 <div class="translate display-6">Купить, покупать</div>[m
+[32m+                 <div class="voice-wrapper d-flex flex-column">[m
+[32m+                   <div class="btn btn-info btn-voice">[m
+[32m+                     <div class="btn-voice__text">Info</div>[m
+[32m+                     <i class="bi bi-play"></i>[m
+[32m+                   </div>[m
+[32m+                   <div class="btn btn-info btn-voice">[m
+[32m+                     <div class="btn-voice__text">Info</div>[m
+[32m+                     <i class="bi bi-play"></i>[m
+[32m+                   </div>[m
+[32m+                   <div class="btn btn-info btn-voice">[m
+[32m+                     <div class="btn-voice__text">Info</div>[m
+[32m+                     <i class="bi bi-play"></i>[m
+[32m+                   </div>[m
+[32m+                 </div>[m
+[32m++>>>>>>> markup[m
+                </div>[m
+              </div>[m
+[31m-           </div>[m
+[31m-           <div class="item task-2" style="background-color: orange;">[m
+[31m-             <h3>Возникать, происходить</h3>[m
+[31m-             <div>[m
+[31m-               <input type="text">[m
+[31m-               <input type="text">[m
+[31m-               <input type="text">[m
+[31m-             </div>[m
+[31m-             <h4>Выберите слово из предложенных</h4>[m
+[31m-             <div>[m
+[31m-               <button>arose</button>[m
+[31m-               <button>write</button>[m
+[31m-               <button>arise</button>[m
+[31m-               <button>fallen</button>[m
+[31m-               <button>wrote</button>[m
+[31m-               <button>written</button>[m
+[31m-             </div>[m
+[31m-           </div>[m
+[31m-           <div class="item task-3" style="background-color: green;">[m
+[31m-             <div>[m
+[31m-               <span>arise</span>[m
+[31m-               <span>arose</span>[m
+[31m-               <span>arisen</span>[m
+[31m-             </div>[m
+[31m-             <input type="text">[m
+[31m-             <h4>выберите слово из предложенных</h4>[m
+[31m-             <div>[m
+[31m-               <button>разводить</button>[m
+[31m-               <button>шить</button>[m
+[31m-               <button>возникать</button>[m
+[31m-               <button>стричь</button>[m
+[31m-             </div>[m
+[31m-           </div>[m
+[31m-           <div class="item task-4" style="background-color: purple;">[m
+[31m-             <h3>возникать, происходить</h3>[m
+[31m-             <div>[m
+[31m-               <input type="text">[m
+[31m-               <input type="text">[m
+[31m-               <input type="text">[m
+[31m-             </div>[m
+[31m-             <h4>Составить глагол <span>первовй</span> формы из букв</h4>[m
+[31m-             <div>[m
+[31m-               <button>A</button>[m
+[31m-               <button>R</button>[m
+[31m-               <button>I</button>[m
+[31m-               <button>S</button>[m
+[31m-               <button>E</button>[m
+[32m+ [m
+[32m+             <div class="carousel-item h-100">[m
+[32m+               <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">[m
+[32m+                 <div class="translate display-6">Купить, покупать</div>[m
+[32m+                 <div class="select-inputs-wrapper d-flex flex-column w-50">[m
+[32m+                   <input class="select-input__first-form form-control" type="text" value="">[m
+[32m+                   <input class="select-input__second-form form-control" type="text" value="">[m
+[32m+                   <input class="select-input__third-form form-control" type="text" value="">[m
+[32m+                 </div>[m
+[32m+                 <div class="voice-wrapper d-flex flex-row flex-wrap">[m
+[32m+                   <div class="help-text">Выберите три формы глагола:</div>[m
+[32m+                   <div class="voice-wrapper d-flex flex-row flex-wrap">[m
+[32m+                     <div class="btn btn-choice">Info</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-choice">InfoInfoInfo</div>[m
+[32m+                   </div>[m
+[32m+                 </div>[m
+[32m+               </div>[m
+              </div>[m
+[31m-           </div>[m
+[31m-           <div class="item task-5" style="background-color: lavender;">[m
+[31m-             <h3>Возникать, происходить</h3>[m
+[31m-             <div>[m
+[31m-               <div>[m
+[31m-                 <i class="material-icons">arrow_play</i>[m
+[31m-                 <input type="text">[m
+[31m-                 <i class="material-icons">live_help</i>[m
+[32m+ [m
+[32m+             <div class="carousel-item h-100">[m
+[32m+               <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">[m
+[32m+                 <div class="verb-form-wrapper d-flex flex-column">[m
+[32m+                   <div class="btn btn-info btn-verb-form">Info</div>[m
+[32m+                   <div class="btn btn-info btn-verb-form">Info</div>[m
+[32m+                   <div class="btn btn-info btn-verb-form">Info</div>[m
+[32m+                 </div>[m
+[32m+                 <div class="select-translate-wrapper">[m
+[32m+                   <div class="help-text">Выберите правильный перевод:</div>[m
+[32m+                   <div class="select-translate d-flex flex-row flex-wrap">[m
+[32m+                     <div class="btn btn-select-translate">Info</div>[m
+[32m+                     <div class="btn btn-select-translate">InfoInfo</div>[m
+[32m+                     <div class="btn btn-select-translate">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-select-translate">InfoInfoInfo</div>[m
+[32m+                     <div class="btn btn-select-translate">InfoInfoInfo</div>[m
+[32m+                   </div>[m
+[32m+                 </div>[m
+                </div>[m
+[31m-               <div>[m
+[31m-                 <i class="material-icons">arrow_play</i>[m
+[31m-                 <input type="text">                [m
+[31m-                 <i class="material-icons">live_help</i>[m
+[32m+             </div>[m
+[32m+ [m
+[32m+             <div class="carousel-item h-100">[m
+[32m+               <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">[m
+[32m+                 <div class="translate display-6">Купить, покупать</div>[m
+[32m+                 <div class="letter-input-wrapper d-flex flex-column w-50">[m
+[32m+                   <input class="letter-input form-control" type="text" value="">[m
+[32m+                 </div>[m
+[32m+                 <div class="voice-wrapper">[m
+[32m+                   <div class="help-text">Составьте первую форму глагола:</div>[m
+[32m+                   <div class="voice-wrapper d-flex flex-row flex-wrap">[m
+[32m+                     <div class="btn btn-letter">a</div>[m
+[32m+                     <div class="btn btn-letter">b</div>[m
+[32m+                     <div class="btn btn-letter">c</div>[m
+[32m+                     <div class="btn btn-letter">d</div>[m
+[32m+                     <div class="btn btn-letter">e</div>[m
+[32m+                     <div class="btn btn-letter">f</div>[m
+[32m+                     <div class="btn btn-letter">g</div>[m
+[32m+                     <div class="btn btn-letter">h</div>[m
+[32m+                   </div>[m
+[32m+                 </div>[m
+                </div>[m
+[31m-               <div>[m
+[31m-                 <i class="material-icons">arrow_play</i>[m
+[31m-                 <input type="text">[m
+[31m-                 <i class="material-icons">live_help</i>[m
+[32m+             </div>[m
+[32m+ [m
+[32m+             <div class="carousel-item h-100">[m
+[32m+               <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">[m
+[32m+                 <div class="translate display-6">Купить, покупать</div>[m
+[32m+                 <div class="three-forms-wrapper d-flex flex-column w-50">[m
+[32m+                   <div class="three-forms__input">[m
+[32m+                     <input class="three-forms__first form-control" type="text" value="">[m
+[32m+                     <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>[m
+[32m+                   </div>[m
+[32m+                   <div class="three-forms__input">[m
+[32m+                     <input class="three-forms__second form-control" type="text" value="">[m
+[32m+                     <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>[m
+[32m+                   </div>[m
+[32m+                   <div class="three-forms__input">[m
+[32m+                     <input class="three-forms__third form-control" type="text" value="">[m
+[32m+                     <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>[m
+[32m+                   </div> [m
+[32m+                 </div>[m
+                </div>[m
+              </div>[m
+            </div>[m
+[32m++<<<<<<< HEAD[m
+[32m +          <div class="item task-6 voiceinator" style="background-color: lavender;">[m
+[32m +            <select name="voice" id="voices">[m
+[32m +                <option value="">Select A Voice</option>[m
+[32m +            </select>[m
+[32m +[m
+[32m +            <label for="rate">Rate:</label>[m
+[32m +            <input name="rate" type="range" min="0" max="3" value="1" step="0.1">[m
+[32m +[m
+[32m +            <label for="pitch">Pitch:</label>[m
+[32m +[m
+[32m +            <input name="pitch" type="range" min="0" max="2" step="0.1">[m
+[32m +            <textarea id="textarea" name="text">Hello! I love JavaScript 👍</textarea>[m
+[32m +            <button id="stop">Stop!</button>[m
+[32m +            <button id="speak">Speak</button>[m
+[32m +          </div>[m
+[32m +        </div>[m
+[32m +        <div class="arrow left">[m
+[32m +          <span>prev</span>[m
+[32m +          <i class="material-icons">keyboard_arrow_left</i>[m
+[32m +        </div>[m
+[32m +        <div class="arrow right">[m
+[32m +          <span>next</span>[m
+[32m +          <i class="material-icons">keyboard_arrow_right</i>[m
+[32m++=======[m
+[32m+           <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">[m
+[32m+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>[m
+[32m+             <span class="visually-hidden">Previous</span>[m
+[32m+           </a>[m
+[32m+           <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">[m
+[32m+             <span class="carousel-control-next-icon" aria-hidden="true"></span>[m
+[32m+             <span class="visually-hidden">Next</span>[m
+[32m+           </a>[m
+[32m++>>>>>>> markup[m
+          </div>[m
+        </div>[m
+      </main>[m
+[1mdiff --cc project/src/page-training/scripts/test.js[m
+[1mindex 303d454,924929d..0000000[m
+[1m--- a/project/src/page-training/scripts/test.js[m
+[1m+++ b/project/src/page-training/scripts/test.js[m
+[36m@@@ -1,9 -1,3 +1,15 @@@[m
+[32m++<<<<<<< HEAD[m
+[32m +const speakContainer = document.getElementById('test-speak');[m
+[32m +[m
+[32m +speakContainer.addEventListener('click', (e) => {[m
+[32m +  const text = e.target.closest('div').querySelector('p').textContent;[m
+[32m +  const utterance = new SpeechSynthesisUtterance(text);[m
+[32m +[m
+[32m +  console.log(window.speechSynthesis.getVoices());[m
+[32m +  speechSynthesis.speak(utterance);[m
+[32m +});[m
+[32m++=======[m
+[32m+ import { Carousel, Popper } from 'bootstrap';[m
+[32m+ [m
+[32m+ console.log('I am here!');[m
+[32m++>>>>>>> markup[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 11da790..463b120 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -5,14 +5,12 @@[m
+     "@types/anymatch": {[m
+       "version": "1.3.1",[m
+       "resolved": "https://registry.npmjs.org/@types/anymatch/-/anymatch-1.3.1.tgz",[m
+[31m-      "integrity": "sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA=="[m
+     },[m
+     "@types/glob": {[m
+       "version": "7.1.3",[m
+       "resolved": "https://registry.npmjs.org/@types/glob/-/glob-7.1.3.tgz",[m
+       "integrity": "sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "@types/minimatch": "*",[m
+         "@types/node": "*"[m
+[36m@@ -21,32 +19,27 @@[m
+     "@types/minimatch": {[m
+       "version": "3.0.3",[m
+       "resolved": "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz",[m
+[31m-      "integrity": "sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA=="[m
+     },[m
+     "@types/node": {[m
+       "version": "14.14.20",[m
+       "resolved": "https://registry.npmjs.org/@types/node/-/node-14.14.20.tgz",[m
+[31m-      "integrity": "sha512-Y93R97Ouif9JEOWPIUyU+eyIdyRqQR0I8Ez1dzku4hDx34NWh4HbtIc3WNzwB1Y9ULvNGeu5B8h8bVL5cAk4/A==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-Y93R97Ouif9JEOWPIUyU+eyIdyRqQR0I8Ez1dzku4hDx34NWh4HbtIc3WNzwB1Y9ULvNGeu5B8h8bVL5cAk4/A=="[m
+     },[m
+     "@types/source-list-map": {[m
+       "version": "0.1.2",[m
+       "resolved": "https://registry.npmjs.org/@types/source-list-map/-/source-list-map-0.1.2.tgz",[m
+[31m-      "integrity": "sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA=="[m
+     },[m
+     "@types/tapable": {[m
+       "version": "1.0.6",[m
+       "resolved": "https://registry.npmjs.org/@types/tapable/-/tapable-1.0.6.tgz",[m
+[31m-      "integrity": "sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA=="[m
+     },[m
+     "@types/uglify-js": {[m
+       "version": "3.11.1",[m
+       "resolved": "https://registry.npmjs.org/@types/uglify-js/-/uglify-js-3.11.1.tgz",[m
+       "integrity": "sha512-7npvPKV+jINLu1SpSYVWG8KvyJBhBa8tmzMMdDoVc2pWUYHN8KIXlPJhjJ4LT97c4dXJA2SHL/q6ADbDriZN+Q==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "source-map": "^0.6.1"[m
+       }[m
+[36m@@ -55,7 +48,6 @@[m
+       "version": "4.41.26",[m
+       "resolved": "https://registry.npmjs.org/@types/webpack/-/webpack-4.41.26.tgz",[m
+       "integrity": "sha512-7ZyTfxjCRwexh+EJFwRUM+CDB2XvgHl4vfuqf1ZKrgGvcS5BrNvPQqJh3tsZ0P6h6Aa1qClVHaJZszLPzpqHeA==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "@types/anymatch": "*",[m
+         "@types/node": "*",[m
+[36m@@ -69,7 +61,6 @@[m
+       "version": "2.1.0",[m
+       "resolved": "https://registry.npmjs.org/@types/webpack-sources/-/webpack-sources-2.1.0.tgz",[m
+       "integrity": "sha512-LXn/oYIpBeucgP1EIJbKQ2/4ZmpvRl+dlrFdX7+94SKRUV3Evy3FsfMZY318vGhkWUS5MPhtOM3w1/hCOAOXcg==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "@types/node": "*",[m
+         "@types/source-list-map": "*",[m
+[36m@@ -79,8 +70,7 @@[m
+         "source-map": {[m
+           "version": "0.7.3",[m
+           "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz",[m
+[31m-          "integrity": "sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==",[m
+[31m-          "dev": true[m
+[32m+[m[32m          "integrity": "sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ=="[m
+         }[m
+       }[m
+     },[m
+[36m@@ -88,7 +78,6 @@[m
+       "version": "1.0.2",[m
+       "resolved": "https://registry.npmjs.org/array-union/-/array-union-1.0.2.tgz",[m
+       "integrity": "sha1-mjRBDk9OPaI96jdb5b5w8kd47Dk=",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "array-uniq": "^1.0.1"[m
+       }[m
+[36m@@ -96,20 +85,17 @@[m
+     "array-uniq": {[m
+       "version": "1.0.3",[m
+       "resolved": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz",[m
+[31m-      "integrity": "sha1-r2rId6Jcx/dOBYiUdThY39sk/bY=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-r2rId6Jcx/dOBYiUdThY39sk/bY="[m
+     },[m
+     "balanced-match": {[m
+       "version": "1.0.0",[m
+       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz",[m
+[31m-      "integrity": "sha1-ibTRmasr7kneFk6gK4nORi1xt2c=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-ibTRmasr7kneFk6gK4nORi1xt2c="[m
+     },[m
+     "brace-expansion": {[m
+       "version": "1.1.11",[m
+       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",[m
+       "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "balanced-match": "^1.0.0",[m
+         "concat-map": "0.0.1"[m
+[36m@@ -119,7 +105,6 @@[m
+       "version": "3.0.0",[m
+       "resolved": "https://registry.npmjs.org/clean-webpack-plugin/-/clean-webpack-plugin-3.0.0.tgz",[m
+       "integrity": "sha512-MciirUH5r+cYLGCOL5JX/ZLzOZbVr1ot3Fw+KcvbhUb6PM+yycqd9ZhIlcigQ5gl+XhppNmw3bEFuaaMNyLj3A==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "@types/webpack": "^4.4.31",[m
+         "del": "^4.1.1"[m
+[36m@@ -128,14 +113,12 @@[m
+     "concat-map": {[m
+       "version": "0.0.1",[m
+       "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",[m
+[31m-      "integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s="[m
+     },[m
+     "del": {[m
+       "version": "4.1.1",[m
+       "resolved": "https://registry.npmjs.org/del/-/del-4.1.1.tgz",[m
+       "integrity": "sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "@types/glob": "^7.1.1",[m
+         "globby": "^6.1.0",[m
+[36m@@ -149,14 +132,12 @@[m
+     "fs.realpath": {[m
+       "version": "1.0.0",[m
+       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",[m
+[31m-      "integrity": "sha1-FQStJSMVjKpA20onh8sBQRmU6k8=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="[m
+     },[m
+     "glob": {[m
+       "version": "7.1.6",[m
+       "resolved": "https://registry.npmjs.org/glob/-/glob-7.1.6.tgz",[m
+       "integrity": "sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "fs.realpath": "^1.0.0",[m
+         "inflight": "^1.0.4",[m
+[36m@@ -170,7 +151,6 @@[m
+       "version": "6.1.0",[m
+       "resolved": "https://registry.npmjs.org/globby/-/globby-6.1.0.tgz",[m
+       "integrity": "sha1-9abXDoOV4hyFj7BInWTfAkJNUGw=",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "array-union": "^1.0.1",[m
+         "glob": "^7.0.3",[m
+[36m@@ -182,8 +162,7 @@[m
+         "pify": {[m
+           "version": "2.3.0",[m
+           "resolved": "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz",[m
+[31m-          "integrity": "sha1-7RQaasBDqEnqWISY59yosVMw6Qw=",[m
+[31m-          "dev": true[m
+[32m+[m[32m          "integrity": "sha1-7RQaasBDqEnqWISY59yosVMw6Qw="[m
+         }[m
+       }[m
+     },[m
+[36m@@ -191,7 +170,6 @@[m
+       "version": "1.0.6",[m
+       "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",[m
+       "integrity": "sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "once": "^1.3.0",[m
+         "wrappy": "1"[m
+[36m@@ -200,20 +178,17 @@[m
+     "inherits": {[m
+       "version": "2.0.4",[m
+       "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",[m
+[31m-      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="[m
+     },[m
+     "is-path-cwd": {[m
+       "version": "2.2.0",[m
+       "resolved": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-2.2.0.tgz",[m
+[31m-      "integrity": "sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ=="[m
+     },[m
+     "is-path-in-cwd": {[m
+       "version": "2.1.0",[m
+       "resolved": "https://registry.npmjs.org/is-path-in-cwd/-/is-path-in-cwd-2.1.0.tgz",[m
+       "integrity": "sha512-rNocXHgipO+rvnP6dk3zI20RpOtrAM/kzbB258Uw5BWr3TpXi861yzjo16Dn4hUox07iw5AyeMLHWsujkjzvRQ==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "is-path-inside": "^2.1.0"[m
+       }[m
+[36m@@ -222,7 +197,6 @@[m
+       "version": "2.1.0",[m
+       "resolved": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-2.1.0.tgz",[m
+       "integrity": "sha512-wiyhTzfDWsvwAW53OBWF5zuvaOGlZ6PwYxAbPVDhpm+gM09xKQGjBq/8uYN12aDvMxnAnq3dxTyoSoRNmg5YFg==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "path-is-inside": "^1.0.2"[m
+       }[m
+[36m@@ -231,7 +205,6 @@[m
+       "version": "3.0.4",[m
+       "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz",[m
+       "integrity": "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "brace-expansion": "^1.1.7"[m
+       }[m
+[36m@@ -239,14 +212,12 @@[m
+     "object-assign": {[m
+       "version": "4.1.1",[m
+       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",[m
+[31m-      "integrity": "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM="[m
+     },[m
+     "once": {[m
+       "version": "1.4.0",[m
+       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",[m
+       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "wrappy": "1"[m
+       }[m
+[36m@@ -254,38 +225,32 @@[m
+     "p-map": {[m
+       "version": "2.1.0",[m
+       "resolved": "https://registry.npmjs.org/p-map/-/p-map-2.1.0.tgz",[m
+[31m-      "integrity": "sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw=="[m
+     },[m
+     "path-is-absolute": {[m
+       "version": "1.0.1",[m
+       "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",[m
+[31m-      "integrity": "sha1-F0uSaHNVNP+8es5r9TpanhtcX18=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-F0uSaHNVNP+8es5r9TpanhtcX18="[m
+     },[m
+     "path-is-inside": {[m
+       "version": "1.0.2",[m
+       "resolved": "https://registry.npmjs.org/path-is-inside/-/path-is-inside-1.0.2.tgz",[m
+[31m-      "integrity": "sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM="[m
+     },[m
+     "pify": {[m
+       "version": "4.0.1",[m
+       "resolved": "https://registry.npmjs.org/pify/-/pify-4.0.1.tgz",[m
+[31m-      "integrity": "sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g=="[m
+     },[m
+     "pinkie": {[m
+       "version": "2.0.4",[m
+       "resolved": "https://registry.npmjs.org/pinkie/-/pinkie-2.0.4.tgz",[m
+[31m-      "integrity": "sha1-clVrgM+g1IqXToDnckjoDtT3+HA=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-clVrgM+g1IqXToDnckjoDtT3+HA="[m
+     },[m
+     "pinkie-promise": {[m
+       "version": "2.0.1",[m
+       "resolved": "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz",[m
+       "integrity": "sha1-ITXW36ejWMBprJsXh3YogihFD/o=",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "pinkie": "^2.0.0"[m
+       }[m
+[36m@@ -294,7 +259,6 @@[m
+       "version": "2.7.1",[m
+       "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-2.7.1.tgz",[m
+       "integrity": "sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==",[m
+[31m-      "dev": true,[m
+       "requires": {[m
+         "glob": "^7.1.3"[m
+       }[m
+[36m@@ -302,14 +266,12 @@[m
+     "source-map": {[m
+       "version": "0.6.1",[m
+       "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",[m
+[31m-      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="[m
+     },[m
+     "wrappy": {[m
+       "version": "1.0.2",[m
+       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",[m
+[31m-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",[m
+[31m-      "dev": true[m
+[32m+[m[32m      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="[m
+     }[m
+   }[m
+ }[m
