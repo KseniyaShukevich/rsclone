@@ -17,16 +17,16 @@
         <div class="items">
           <div class="item task-1" style="background-color: red;">
             <h3>Возникать, происходить</h3>
-            <div>
-              <div>
+            <div id="test-speak">
+              <div style="border: 2px solid black">
                 <p>arise</p>
                 <i class="material-icons">play_arrow</i>
               </div>
-              <div>
+              <div style="border: 2px solid black">
                 <p>arose</p>
                 <i class="material-icons">play_arrow</i>
               </div>
-              <div>
+              <div style="border: 2px solid black">
                 <p>arisen</p>
                 <i class="material-icons">play_arrow</i>
               </div>
@@ -99,6 +99,21 @@
                 <i class="material-icons">live_help</i>
               </div>
             </div>
+          </div>
+          <div class="item task-6 voiceinator" style="background-color: lavender;">
+            <select name="voice" id="voices">
+                <option value="">Select A Voice</option>
+            </select>
+
+            <label for="rate">Rate:</label>
+            <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+
+            <label for="pitch">Pitch:</label>
+
+            <input name="pitch" type="range" min="0" max="2" step="0.1">
+            <textarea id="textarea" name="text">Hello! I love JavaScript 👍</textarea>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
           </div>
         </div>
         <div class="arrow left">
