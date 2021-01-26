@@ -55,7 +55,6 @@ module.exports = {
     pageUser: './page-user/index.js',
     pageUserSettings: './page-user-settings/index.js',
     training: ['./page-training/index.js', './page-training/style.scss'],
-    // page404: './page-not-found/index.js',
   },
   output: {
     filename: filename('js'),
