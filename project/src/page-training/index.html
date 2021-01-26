@@ -3,118 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.scss">
   <title>Training</title>
 </head>
-<body>
-    <header class="header">
-      <h2 class="percentage">100%</h2>
-    </header>
-    <main class="main">
-      <div class="slider-wrapper">
-        <div class="items">
-          <div class="item task-1" style="background-color: red;">
-            <h3>Возникать, происходить</h3>
-            <div>
-              <div>
-                <p>arise</p>
-                <i class="material-icons">play_arrow</i>
+<body class="vw-100 vh-100 d-flex flex-column justify-content-between">
+  <header class="header">
+    <div class="container position-relative">
+      <h1 class="invisible">Irregular verbs</h1>
+      <div class="display-6 text-center">Irregular verbs</div>
+      <div class="form-check form-switch form-switch_color position-absolute top-50 translate-middle-y">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+      </div>
+    </div>
+  </header>
+    <main class="main h-100">
+      <div class="container h-100">
+        <div id="carousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-slide="false">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item h-100 active">
+              <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
+                <div class="translate display-6">Купить, покупать</div>
+                <div class="voice-wrapper d-flex flex-column">
+                  <div class="btn btn-info btn-voice">
+                    <div class="btn-voice__text">Info</div>
+                    <i class="bi bi-play"></i>
+                  </div>
+                  <div class="btn btn-info btn-voice">
+                    <div class="btn-voice__text">Info</div>
+                    <i class="bi bi-play"></i>
+                  </div>
+                  <div class="btn btn-info btn-voice">
+                    <div class="btn-voice__text">Info</div>
+                    <i class="bi bi-play"></i>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>arose</p>
-                <i class="material-icons">play_arrow</i>
+            </div>
+
+            <div class="carousel-item h-100">
+              <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
+                <div class="translate display-6">Купить, покупать</div>
+                <div class="select-inputs-wrapper d-flex flex-column w-50">
+                  <input class="select-input__first-form form-control" type="text" value="">
+                  <input class="select-input__second-form form-control" type="text" value="">
+                  <input class="select-input__third-form form-control" type="text" value="">
+                </div>
+                <div class="voice-wrapper d-flex flex-row flex-wrap">
+                  <div class="help-text">Выберите три формы глагола:</div>
+                  <div class="voice-wrapper d-flex flex-row flex-wrap">
+                    <div class="btn btn-choice">Info</div>
+                    <div class="btn btn-choice">InfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                    <div class="btn btn-choice">InfoInfoInfo</div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>arisen</p>
-                <i class="material-icons">play_arrow</i>
+            </div>
+
+            <div class="carousel-item h-100">
+              <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
+                <div class="verb-form-wrapper d-flex flex-column">
+                  <div class="btn btn-info btn-verb-form">Info</div>
+                  <div class="btn btn-info btn-verb-form">Info</div>
+                  <div class="btn btn-info btn-verb-form">Info</div>
+                </div>
+                <div class="select-translate-wrapper">
+                  <div class="help-text">Выберите правильный перевод:</div>
+                  <div class="select-translate d-flex flex-row flex-wrap">
+                    <div class="btn btn-select-translate">Info</div>
+                    <div class="btn btn-select-translate">InfoInfo</div>
+                    <div class="btn btn-select-translate">InfoInfoInfo</div>
+                    <div class="btn btn-select-translate">InfoInfoInfo</div>
+                    <div class="btn btn-select-translate">InfoInfoInfo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item h-100">
+              <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
+                <div class="translate display-6">Купить, покупать</div>
+                <div class="letter-input-wrapper d-flex flex-column w-50">
+                  <input class="letter-input form-control" type="text" value="">
+                </div>
+                <div class="voice-wrapper">
+                  <div class="help-text">Составьте первую форму глагола:</div>
+                  <div class="voice-wrapper d-flex flex-row flex-wrap">
+                    <div class="btn btn-letter">a</div>
+                    <div class="btn btn-letter">b</div>
+                    <div class="btn btn-letter">c</div>
+                    <div class="btn btn-letter">d</div>
+                    <div class="btn btn-letter">e</div>
+                    <div class="btn btn-letter">f</div>
+                    <div class="btn btn-letter">g</div>
+                    <div class="btn btn-letter">h</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item h-100">
+              <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
+                <div class="translate display-6">Купить, покупать</div>
+                <div class="three-forms-wrapper d-flex flex-column w-50">
+                  <div class="three-forms__input">
+                    <input class="three-forms__first form-control" type="text" value="">
+                    <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+                  </div>
+                  <div class="three-forms__input">
+                    <input class="three-forms__second form-control" type="text" value="">
+                    <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+                  </div>
+                  <div class="three-forms__input">
+                    <input class="three-forms__third form-control" type="text" value="">
+                    <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+                  </div> 
+                </div>
               </div>
             </div>
           </div>
-          <div class="item task-2" style="background-color: orange;">
-            <h3>Возникать, происходить</h3>
-            <div>
-              <input type="text">
-              <input type="text">
-              <input type="text">
-            </div>
-            <h4>Выберите слово из предложенных</h4>
-            <div>
-              <button>arose</button>
-              <button>write</button>
-              <button>arise</button>
-              <button>fallen</button>
-              <button>wrote</button>
-              <button>written</button>
-            </div>
-          </div>
-          <div class="item task-3" style="background-color: green;">
-            <div>
-              <span>arise</span>
-              <span>arose</span>
-              <span>arisen</span>
-            </div>
-            <input type="text">
-            <h4>выберите слово из предложенных</h4>
-            <div>
-              <button>разводить</button>
-              <button>шить</button>
-              <button>возникать</button>
-              <button>стричь</button>
-            </div>
-          </div>
-          <div class="item task-4" style="background-color: purple;">
-            <h3>возникать, происходить</h3>
-            <div>
-              <input type="text">
-              <input type="text">
-              <input type="text">
-            </div>
-            <h4>Составить глагол <span>первовй</span> формы из букв</h4>
-            <div>
-              <button>A</button>
-              <button>R</button>
-              <button>I</button>
-              <button>S</button>
-              <button>E</button>
-            </div>
-          </div>
-          <div class="item task-5" style="background-color: lavender;">
-            <h3>Возникать, происходить</h3>
-            <div>
-              <div>
-                <i class="material-icons">arrow_play</i>
-                <input type="text">
-                <i class="material-icons">live_help</i>
-              </div>
-              <div>
-                <i class="material-icons">arrow_play</i>
-                <input type="text">                
-                <i class="material-icons">live_help</i>
-              </div>
-              <div>
-                <i class="material-icons">arrow_play</i>
-                <input type="text">
-                <i class="material-icons">live_help</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="arrow left">
-          <span>prev</span>
-          <i class="material-icons">keyboard_arrow_left</i>
-        </div>
-        <div class="arrow right">
-          <span>next</span>
-          <i class="material-icons">keyboard_arrow_right</i>
+          <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
         </div>
       </div>
     </main>
     <footer class="footer">
-      <i class="material-icons button">backspace</i>
-      <i class="material-icons button">person</i>
-      <i class="material-icons button">settings</i>
+      <i class="bi bi-backspace"></i>
+      <i class="bi bi-person-circle"></i>
+      <i class="bi bi-gear"></i>
     </footer>
 </body>
 </html>

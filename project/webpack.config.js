@@ -54,7 +54,7 @@ module.exports = {
     pageTwo: './page-main/index.js',
     pageUser: './page-user/index.js',
     pageUserSettings: './page-user-settings/index.js',
-    training: ['./page-training/index.js', './page-training/style.scss'],
+    training: './page-training/index.js',
   },
   output: {
     filename: filename('js'),
