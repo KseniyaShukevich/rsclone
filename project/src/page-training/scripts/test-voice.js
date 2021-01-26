@@ -1,10 +1,18 @@
-let voices = [];
+const speakContainer = document.getElementById('test-speak');
+speakContainer.addEventListener('click', (e) => {
+  const text = e.target.closest('div').querySelector('p').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  console.log(window.speechSynthesis.getVoices());
+  speechSynthesis.speak(utterance);
+});
 const msg = new SpeechSynthesisUtterance();
 const voicesDropdown = document.getElementById('voices');
 const options = document.querySelectorAll('input, #text');
 const speakButton = document.getElementById('speak');
 console.log(document.getElementById('stop'));
 const stopButton = document.getElementById('stop');
+let voices = [];
 
 function populateVoices() {
   voices = this.getVoices();
