@@ -104,14 +104,6 @@ module.exports = {
         collapseWhitespace: isProd,
       },
     }),
-    // new HTMLWebpackPlugin({
-    //   filename: '404.html',
-    //   chunks: ['page404', 'polyfill'],
-    //   template: './page-not-found/404.html',
-    //   minify: {
-    //     collapseWhitespace: isProd,
-    //   },
-    // }),
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
