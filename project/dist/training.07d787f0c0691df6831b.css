@@ -1,0 +1,99 @@
+
+* {
+  padding: 0 0;
+  margin: 0 0;
+  box-sizing: border-box;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+*:focus {
+  outline: none; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; }
+
+.header {
+  display: flex;
+  width: 100%;
+  min-height: 6%;
+  max-height: 80px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black; }
+  .header .percentage {
+    font-family: Roboto; }
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+
+.footer {
+  display: flex;
+  width: 100%;
+  min-height: 6%;
+  max-height: 80px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid black; }
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+  .slider-wrapper .items {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 9999px;
+    height: 100%;
+    transition: all ease 0.6s; }
+    .slider-wrapper .items .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-width: 100vw;
+      max-width: 100vw;
+      height: 100%; }
+  .slider-wrapper .arrow {
+    position: absolute;
+    z-index: 1000;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    border: 2px solid black; }
+    .slider-wrapper .arrow.left {
+      flex-direction: row-reverse;
+      left: 20px; }
+    .slider-wrapper .arrow.right {
+      flex-direction: row;
+      right: 20px; }
+    .slider-wrapper .arrow span {
+      font-family: Roboto;
+      font-size: 22px; }
+    .slider-wrapper .arrow .material-icons {
+      font-size: 24px; }
+
+.disabled {
+  display: none; }
+
+.footer > .button {
+  font-size: 32px; }
+  .footer > .button:hover {
+    cursor: pointer; }
+
+
+/*# sourceMappingURL=training.07d787f0c0691df6831b.css.map*/
