@@ -1,4 +1,4 @@
-export default class Slide1 {
+export default class Type0 {
   constructor(verbObj) {
     this.infinitive = verbObj.infinitive;
     this.past = verbObj.past;
@@ -31,27 +31,27 @@ export default class Slide1 {
 
     slideElem.classList.add('carousel-item', 'h-100');
     slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('afterbegin', slideElem);
+    carousel.insertAdjacentElement('beforeend', slideElem);
 
     this.triggers = [...slideElem.querySelectorAll('[data-is-complete]')];
+    this.triggers.forEach((elem) => elem.addEventListener('click', () => this.addTrigger(elem)));
+  }
 
-    this.triggers.forEach((trigger) => trigger.addEventListener('click', () => {
-      const text = trigger.textContent;
-      const utterance = new SpeechSynthesisUtterance(text);
-      const triggerElem = trigger.closest('[data-is-complete]');
+  addTrigger(trigger) {
+    const text = trigger.textContent;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const triggerElem = trigger.closest('[data-is-complete]');
 
-      utterance.lang = 'en-En';
-      triggerElem.dataset.isComplete = 1;
+    // setVoice
+    utterance.lang = 'en-En';
+    triggerElem.dataset.isComplete = 1;
 
-      speechSynthesis.speak(utterance);
-      this.areYouWinnigSon();
-    }));
+    speechSynthesis.speak(utterance);
+    this.areYouWinnigSon();
   }
 
   areYouWinnigSon() {
-    const condition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
-    console.log(condition);
-    // this.triggers.forEach((elem) => console.log(elem.dataset.isComplete));
-    if (condition) alert('FUCK YEAH!!!!');
+    const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
+    if (winCondition) console.log('FUCK YEAH!!!!');
   }
 }
