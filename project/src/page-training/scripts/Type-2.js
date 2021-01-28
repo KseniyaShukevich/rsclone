@@ -80,12 +80,14 @@ export default class Type0 {
     container.addEventListener('click', (e) => {
       const button = e.target.closest('.btn-select-translate');
       const btnText = button.textContent;
-      console.log(btnText);
+
+      this.areYouWinnigSon(btnText);
     });
   }
 
-  areYouWinnigSon() {
-    const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
+  areYouWinnigSon(choice) {
+    const answer = this.translation;
+    const winCondition = choice === answer;
     if (winCondition) alert('FUCK YEAH!!!!');
   }
 }

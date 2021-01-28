@@ -4,6 +4,7 @@ import verbs from '../../../verbs.json';
 import Type0 from './Type-0';
 import Type1 from './Type-1';
 import Type2 from './Type-2';
+import Type3 from './Type-3';
 
 const key = getWord();
 const verbObj = verbs[key];
@@ -16,6 +17,7 @@ const slideClassCollection = [
   createSlide(Type0, verbObj),
   createSlide(Type1, verbObj),
   createSlide(Type2, verbObj),
+  createSlide(Type3, verbObj),
 ];
 slideClassCollection.forEach((slide) => slide.initSlide());
 
