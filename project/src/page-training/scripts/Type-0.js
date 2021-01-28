@@ -23,6 +23,7 @@ export default class Type0 {
       </div>
     </div>`;
     this.triggers = null;
+    this.mistakes = 0;
   }
 
   initSlide() {

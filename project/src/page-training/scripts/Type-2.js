@@ -1,57 +1,91 @@
+/* eslint-disable no-bitwise */
 export default class Type0 {
-  constructor(verbObj) {
+  constructor(verbObj, verbs) {
+    this.verbs = verbs;
     this.infinitive = verbObj.infinitive;
     this.past = verbObj.past;
     this.participle = verbObj.participle;
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-      <div id="translate" class="translate display-6">${this.translation}</div>
-      <div class="voice-wrapper d-flex flex-column">
-        <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.infinitive}</div>
-          <i class="bi bi-play"></i>
-        </div>
-        <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.past}</div>
-          <i class="bi bi-play"></i>
-        </div>
-        <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.participle}</div>
-          <i class="bi bi-play"></i>
+      <div class="verb-form-wrapper d-flex flex-column">
+        <div class="btn btn-info btn-verb-form">${this.infinitive}</div>
+        <div class="btn btn-info btn-verb-form">${this.past}</div>
+        <div class="btn btn-info btn-verb-form">${this.participle}</div>
+      </div>
+      <div class="select-translate-wrapper">
+        <div class="help-text">Выберите правильный перевод:</div>
+        <div class="select-translate d-flex flex-row flex-wrap">
+
         </div>
       </div>
     </div>`;
-    this.triggers = null;
+    this.slideElem = null;
+    this.mistakes = 0;
   }
 
   initSlide() {
-    const slideElem = document.createElement('div');
     const carousel = document.querySelector('.carousel-inner');
+    this.slideElem = document.createElement('div');
 
-    slideElem.classList.add('carousel-item', 'h-100');
-    slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', slideElem);
+    this.slideElem.classList.add('carousel-item', 'h-100');
+    this.slideElem.innerHTML = this.slideHtml;
+    carousel.insertAdjacentElement('beforeend', this.slideElem);
 
-    this.triggers = [...slideElem.querySelectorAll('[data-is-complete]')];
-    this.triggers.forEach((elem) => elem.addEventListener('click', () => this.addTriggers(elem)));
+    this.addTriggers();
   }
 
-  addTriggers(trigger) {
-    const text = trigger.textContent;
-    const utterance = new SpeechSynthesisUtterance(text);
-    const triggerElem = trigger.closest('[data-is-complete]');
+  generateTranslates() {
+    const findRandomTranslate = () => {
+      const verbKeys = Object.keys(this.verbs);
+      const randomVerb = this.verbs[verbKeys[verbKeys.length * Math.random() << 0]];
 
-    // setVoice
-    utterance.lang = 'en-En';
-    triggerElem.dataset.isComplete = 1;
+      return randomVerb.translation;
+    };
+    const shuffle = (array) => {
+      const shuffled = array.slice();
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+    const result = shuffle([
+      this.translation,
+      findRandomTranslate(),
+      findRandomTranslate(),
+      findRandomTranslate(),
+    ]);
 
-    speechSynthesis.speak(utterance);
-    this.areYouWinnigSon();
+    return result;
+  }
+
+  createButtons() {
+    const words = this.generateTranslates();
+
+    return words.map((word) => {
+      const button = document.createElement('div');
+
+      button.classList.add('btn', 'btn-select-translate');
+      button.textContent = word;
+      return button;
+    });
+  }
+
+  addTriggers() {
+    const container = this.slideElem.querySelector('.select-translate-wrapper');
+    const buttons = this.createButtons();
+
+    container.append(...buttons);
+    container.addEventListener('click', (e) => {
+      const button = e.target.closest('.btn-select-translate');
+      const btnText = button.textContent;
+      console.log(btnText);
+    });
   }
 
   areYouWinnigSon() {
     const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
-    if (winCondition) console.log('FUCK YEAH!!!!');
+    if (winCondition) alert('FUCK YEAH!!!!');
   }
 }

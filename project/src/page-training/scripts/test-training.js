@@ -11,12 +11,14 @@ const createSlide = (Class, currentVerbObj) => {
   const slide = new Class(currentVerbObj, verbs);
   return slide;
 };
+
 const slideClassCollection = [
   createSlide(Type0, verbObj),
   createSlide(Type1, verbObj),
   createSlide(Type2, verbObj),
 ];
 slideClassCollection.forEach((slide) => slide.initSlide());
+
 document.querySelector('.carousel-item').classList.add('active');
 
 const myCarousel = document.querySelector('#carousel');

@@ -10,9 +10,9 @@ export default class Type1 {
       <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
         <div class="translate display-6">${this.infinitive}</div>
         <div class="select-inputs-wrapper d-flex flex-column w-50">
-          <input class="select-input__first-form form-control" type="text" value="" readonly>
-          <input class="select-input__second-form form-control" type="text" value="" readonly>
-          <input class="select-input__third-form form-control" type="text" value="" readonly>
+          <input data-is-complete="0" class="select-input__first-form form-control" type="text" value="" readonly>
+          <input data-is-complete="0" class="select-input__second-form form-control" type="text" value="" readonly>
+          <input data-is-complete="0" class="select-input__third-form form-control" type="text" value="" readonly>
         </div>
         <div class="voice-wrapper d-flex flex-row flex-wrap">
           <div class="help-text">Выберите три формы глагола:</div>
@@ -26,23 +26,25 @@ export default class Type1 {
       'past',
       'participle',
     ];
+    this.slideElem = null;
+    this.triggerElems = null;
     this.order = 0;
-    this.buttons = null;
-    this.triggers = null;
+    this.mistakes = 0;
   }
 
   initSlide() {
     const carousel = document.querySelector('.carousel-inner');
-    const slideElem = document.createElement('div');
+    this.slideElem = document.createElement('div');
 
-    slideElem.classList.add('carousel-item', 'h-100');
-    slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', slideElem);
+    this.slideElem.classList.add('carousel-item', 'h-100');
+    this.slideElem.innerHTML = this.slideHtml;
+    carousel.insertAdjacentElement('beforeend', this.slideElem);
 
-    this.addTriggers(slideElem);
+    this.triggerElems = this.slideElem.querySelectorAll('input');
+    this.addTriggers();
   }
 
-  generateWords() {
+  generateRandomWords() {
     const conditions = [
       'infinitive',
       'past',
@@ -76,21 +78,19 @@ export default class Type1 {
   }
 
   createButtons() {
-    const words = this.generateWords();
-    const buttons = Array(6).fill(null);
+    const words = this.generateRandomWords();
 
-    return buttons.map((_, index) => {
+    return words.map((word) => {
       const button = document.createElement('div');
 
       button.classList.add('btn', 'btn-choice');
-      button.textContent = `${words[index]}`;
+      button.textContent = word;
       return button;
     });
   }
 
-  addTriggers(elem) {
-    const container = elem.querySelector('#btn-container');
-    const inputs = elem.querySelectorAll('input');
+  addTriggers() {
+    const container = this.slideElem.querySelector('#btn-container');
     const buttons = this.createButtons();
 
     container.append(...buttons);
@@ -102,17 +102,17 @@ export default class Type1 {
 
         if (btnText === triggerWord) {
           // add some actions
-          inputs[this.order].innerHTML = button.textContent;
-          inputs[this.order].textContent = button.textContent;
-          inputs[this.order].value = button.textContent;
+          this.triggerElems[this.order].value = button.textContent;
+          this.triggerElems[this.order].dataset.isComplete = 1;
           this.order += 1;
         }
+        this.areYouWinnigSon();
       }
     });
   }
 
   areYouWinnigSon() {
-    const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
+    const winCondition = [...this.triggerElems].every((elem) => +elem.dataset.isComplete === 1);
     if (winCondition) alert('FUCK YEAH!!!!');
   }
 }
