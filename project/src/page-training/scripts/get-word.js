@@ -1,3 +1,3 @@
 export default function getWord() {
-  return 'arise';
+  return 'write';
 }

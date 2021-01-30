@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-bitwise */
-export default class Type0 {
+export default class Type3 {
   constructor(verbObj, verbs) {
     this.verb = {
       infinitive: verbObj.infinitive,
