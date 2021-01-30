@@ -10,21 +10,13 @@ const hashPassword = async (password) => {
 };
 
 const addWords = () => {
-  const arraysWords = Object.entries(wordsJson);
-  const words = [];
+  const obj = wordsJson;
 
-  for (let i = 0; i < arraysWords.length; i += 1) {
-    const arrWord = Object.entries(arraysWords[i][1]);
-    words.push({
-      infinitive: arrWord[0][1],
-      past: arrWord[1][1],
-      participle: arrWord[2][1],
-      translation: arrWord[3][1],
-      learned: false
-    });
+  for (key in obj) {
+    obj[key].learned = false;
   }
 
-  return words;
+  return obj;
 };
 
 const sendStatus = async (res, dataUser, user) => {

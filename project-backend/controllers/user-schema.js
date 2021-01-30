@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  progress: Array,
+  progress: Object,
   image: String,
   imagePath: String,
   token: String
