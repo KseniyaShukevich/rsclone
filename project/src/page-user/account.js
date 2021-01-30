@@ -3,6 +3,21 @@ import request from '../services/request';
 import { LSTORAGEID } from '../services/constants';
 
 const exit = document.querySelector('#exit');
+const containerTraining = document.querySelector('#container-training');
+
+function createCard(word) {
+  const card = document.createElement('div');
+  card.style.border = '1px solid blacne';
+  card.textContent = word;
+  return card;
+}
+
+function addTrainings(progress) {
+  const keys = Object.keys(progress);
+  keys.forEach((key) => {
+    containerTraining.append(createCard(key));
+  });
+}
 
 function fillUserAccount(dataUser) {
   const userName = document.querySelector('#user-name');
@@ -13,6 +28,7 @@ function fillUserAccount(dataUser) {
   } else {
     userPhoto.style.backgroundImage = 'url("./blank_photo.jpg")';
   }
+  addTrainings(dataUser[0].progress);
 }
 
 async function getUserData() {
