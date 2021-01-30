@@ -1,4 +1,3 @@
-
 // const wordsJson = require('../verbs.json');
 // const Word = require('../controllers/word-schema');
 
@@ -19,7 +18,7 @@
 //     return words;
 //   }
 
-    // const words = addWords();
-    // words.forEach(word => word.save(function(err) {
-    //   console.log(err);
-    // }));
+// const words = addWords();
+// words.forEach(word => word.save(function(err) {
+//   console.log(err);
+// }));
