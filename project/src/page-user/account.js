@@ -7,7 +7,7 @@ const containerTraining = document.querySelector('#container-training');
 
 function createCard(word) {
   const card = document.createElement('div');
-  card.style.border = '1px solid blacne';
+  card.style.border = '1px solid black';
   card.textContent = word;
   return card;
 }
