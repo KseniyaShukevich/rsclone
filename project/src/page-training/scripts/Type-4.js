@@ -1,11 +1,11 @@
 export default class Type4 {
   constructor(verbObj, verbs) {
+    this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
       past: verbObj.past,
       participle: verbObj.participle,
     };
-    this.verbs = verbs;
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
@@ -27,6 +27,7 @@ export default class Type4 {
     </div>`;
     this.slideElem = null;
     this.mistakes = 0;
+    this.isComplete = false;
   }
 
   initSlide() {
@@ -54,7 +55,13 @@ export default class Type4 {
 
   areYouWinningSon() {
     if ([...this.inputs].every((input, i) => input.value === Object.values(this.verb)[i])) {
+      this.isComplete = true;
       alert('HELL YEAH!!!');
+      this.showNext();
     }
+  }
+
+  showNext() {
+    //вот тутачки
   }
 }

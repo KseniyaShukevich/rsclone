@@ -2,13 +2,15 @@
 export default class Type1 {
   constructor(verbObj, verbs) {
     this.verbs = verbs;
-    this.infinitive = verbObj.infinitive;
-    this.past = verbObj.past;
-    this.participle = verbObj.participle;
+    this.verb = {
+      infinitive: verbObj.infinitive,
+      past: verbObj.past,
+      participle: verbObj.participle,
+    };
     this.translation = verbObj.translation;
     this.slideHtml = `
       <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-        <div class="translate display-6">${this.infinitive}</div>
+        <div class="translate display-6">${this.verb.infinitive}</div>
         <div class="select-inputs-wrapper d-flex flex-column w-50">
           <input data-is-complete="0" class="select-input__first-form form-control" type="text" value="" readonly>
           <input data-is-complete="0" class="select-input__second-form form-control" type="text" value="" readonly>
@@ -21,15 +23,11 @@ export default class Type1 {
           </div>
         </div>
       </div>`;
-    this.conditions = [
-      'infinitive',
-      'past',
-      'participle',
-    ];
     this.slideElem = null;
     this.triggerElems = null;
     this.order = 0;
     this.mistakes = 0;
+    this.isComplete = false;
   }
 
   initSlide() {
@@ -45,13 +43,9 @@ export default class Type1 {
   }
 
   generateRandomWords() {
-    const conditions = [
-      'infinitive',
-      'past',
-      'participle',
-    ];
     const findRandom = () => {
       const verbKeys = Object.keys(this.verbs);
+      const conditions = Object.keys(this.verb);
       const randomVerb = this.verbs[verbKeys[verbKeys.length * Math.random() << 0]];
       const randomCondition = conditions[conditions.length * Math.random() << 0];
 
@@ -66,9 +60,7 @@ export default class Type1 {
       return shuffled;
     };
     const result = shuffle([
-      this.infinitive,
-      this.past,
-      this.participle,
+      ...Object.values(this.verb),
       findRandom(),
       findRandom(),
       findRandom(),
@@ -113,6 +105,14 @@ export default class Type1 {
 
   areYouWinnigSon() {
     const winCondition = [...this.triggerElems].every((elem) => +elem.dataset.isComplete === 1);
-    if (winCondition) alert('FUCK YEAH!!!!');
+    if (winCondition) {
+      this.isComplete = true;
+      alert('FUCK YEAH!!!!');
+      this.showNext();
+    }
+  }
+
+  showNext() {
+    //вот тутачки
   }
 }
