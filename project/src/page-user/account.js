@@ -19,7 +19,9 @@ function addStyles(card, isLearned) {
 }
 
 function createCard(word, isLearned) {
-  const card = document.createElement('div');
+  const card = document.createElement('a');
+  card.href = '/training';
+  card.style.display = 'block';
   card.textContent = word;
   addStyles(card, isLearned);
   card.addEventListener('click', addWordToLStorage);

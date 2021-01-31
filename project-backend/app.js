@@ -8,6 +8,7 @@ const rfs = require('rotating-file-stream');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const settingsRouter = require('./routes/user-settings');
+const trainingRouter = require('./routes/training');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, '../project/dist')));
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/settings', settingsRouter);
+app.use('/training', trainingRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
