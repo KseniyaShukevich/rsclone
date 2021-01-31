@@ -1,5 +1,4 @@
 import 'bootstrap';
 import './styles/index.scss';
-import './scripts/training';
-import './scripts/test';
-import '../scripts/switcher.js';
+import './scripts/test-training';
+import '../scripts/switcher';

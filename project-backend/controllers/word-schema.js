@@ -4,7 +4,8 @@ const wordSchema = new mongoose.Schema({
   infinitive: String,
   past: String,
   participle: String,
-  translation: String
+  translation: String,
+  learned: Boolean
 },
 {
   versionKey: false

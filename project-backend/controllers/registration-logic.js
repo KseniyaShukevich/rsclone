@@ -1,17 +1,28 @@
 const bcrypt = require('bcrypt');
 const User = require('./user-schema');
+const wordsJson = require('../verbs.json');
 
-const hashPassword = async function (password) {
+const hashPassword = async (password) => {
   const saltRounds = 10;
   const saltPass = await bcrypt.genSalt(saltRounds);
   const hashedPass = await bcrypt.hash(password, saltPass);
   return hashedPass;
 };
 
-const sendStatus = async function (res, dataUser, user) {
+const addWords = () => {
+  const obj = wordsJson;
+
+  for (key in obj) {
+    obj[key].learned = false;
+  }
+
+  return obj;
+};
+
+const sendStatus = async (res, dataUser, user) => {
   if (!user.length) {
     const data = dataUser;
-    data.progress = [];
+    data.progress = addWords();
     data.image = '';
     data.imagePath = '';
     data.password = await hashPassword(dataUser.password);
@@ -21,6 +32,7 @@ const sendStatus = async function (res, dataUser, user) {
   else {
     res.status(406).end();
   }
+  return null;
 };
 
 const regUser = (req, res) => {
