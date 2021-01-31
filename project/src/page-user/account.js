@@ -5,17 +5,33 @@ import { LSTORAGEID } from '../services/constants';
 const exit = document.querySelector('#exit');
 const containerTraining = document.querySelector('#container-training');
 
-function createCard(word) {
-  const card = document.createElement('div');
-  card.style.border = '1px solid black';
+function addWordToLStorage(e) {
+  const trainingWord = e.target.textContent;
+  localStorage.setItem(`${LSTORAGEID}word`, trainingWord);
+}
+
+function addStyles(card, isLearned) {
+  if (isLearned) {
+    card.classList.add('true');
+  } else {
+    card.classList.add('false');
+  }
+}
+
+function createCard(word, isLearned) {
+  const card = document.createElement('a');
+  card.href = '/training';
+  card.style.display = 'block';
   card.textContent = word;
+  addStyles(card, isLearned);
+  card.addEventListener('click', addWordToLStorage);
   return card;
 }
 
 function addTrainings(progress) {
   const keys = Object.keys(progress);
   keys.forEach((key) => {
-    containerTraining.append(createCard(key));
+    containerTraining.append(createCard(key, progress[key].learned));
   });
 }
 
