@@ -1,11 +1,16 @@
 import { Carousel, Popper } from 'bootstrap';
-import getWord from './get-word';
+import { LSTORAGEID } from '../../services/constants';
 import verbs from '../../../verbs.json';
 import Type0 from './Type-0';
 import Type1 from './Type-1';
 import Type2 from './Type-2';
 import Type3 from './Type-3';
 import Type4 from './Type-4';
+
+const getWord = () => {
+  const word = localStorage.getItem(`${LSTORAGEID}word`);
+  return word;
+};
 
 const key = getWord();
 const verbObj = verbs[key];

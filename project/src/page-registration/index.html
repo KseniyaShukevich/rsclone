@@ -58,7 +58,7 @@
                   <form class="registration-form" action="/api/user" method="post" id="reg">
                     <div class="mb-2">
                       <label for="name-reg" class="form-label">Имя</label>
-                      <input type="text" class="form-control" id="name-reg" aria-describedby="emailHelp" required>
+                      <input type="text" class="form-control" id="name-reg" required>
                     </div>
                     <div class="mb-2">
                       <label for="email-reg" class="form-label">Email</label>
@@ -67,6 +67,12 @@
                     <div class="mb-5">
                       <label for="pass-reg" class="form-label">Пароль</label>
                       <input type="password" class="form-control" id="pass-reg" required>
+                    </div>
+                    <div class="message-error alert-danger alert" id="error-email">
+                      email должен быть формата: email@example.by
+                    </div>
+                    <div class="message-error alert-danger alert" id="error-password">
+                      Пароль должен быть не меньше 6-ти символов
                     </div>
                     <div class="message-error alert-danger alert" id="error-reg">
                       Ошибка при регистрации. Убедитесь, что данные верны.

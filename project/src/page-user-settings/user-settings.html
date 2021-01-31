@@ -18,7 +18,7 @@
     <main class="main">
         <div class="container h-100">
             <a class="link-primary float-end" href="/api/entry">Выйти</a>
-            <a class="link-primary" href="./user.html">Профиль</a>
+            <a class="link-primary" href="/user">Профиль</a>
             <form id="user-settings">
                 <div class="mb-3 avatar-fileds pt-3">
                     <div class="container-image avatar-fileds__image mb-3">
@@ -26,11 +26,11 @@
                     </div>
                     <div class="avatar-fileds__wrapper position-relative">
                         <div class="avatar-fileds__label">Выберите фото</div>
-                        <input class="avatar-fileds__input position-absolute" type="file" id="file">
+                        <input class="avatar-fileds__input position-absolute" name="file" type="file" id="file">
                         <input type="text" name="token" id="user-token" style="display: none;">
                     </div>
-                </div>                
-                
+                </div>
+
                 <div class="mb-4">
                     <label class="form-label" for="new-name">Сменить имя</label>
                     <input class="form-control" name="new-name"  type="text" id="new-name">
