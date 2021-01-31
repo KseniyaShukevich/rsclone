@@ -13,14 +13,17 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    padding-bottom: 70px;
     color: #1d253b;
+    background-color: #f5f6fa;
 
     &.dark { 
         background-color: #1e1e2f;
         color: hsla(0,0%,100%,.6);
     }
 }
+
+.without-footer { padding-bottom: 0; }
 
 h1 {
     height: 0;
@@ -35,3 +38,8 @@ h1 {
 }
 
 .help-text { margin-bottom: 10px; }
+
+.error-message, 
+.success-message { display: none; }
+
+.display-block { display: block; }

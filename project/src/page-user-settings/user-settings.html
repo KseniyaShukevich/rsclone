@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Настройки пользователя</title>
 </head>
-<body class="vw-100 vh-100">
+<body class="w-100 min-vh-100">
     <header class="header">
         <div class="container position-relative">
           <h1 class="invisible">Настройки пользователя</h1>
@@ -18,7 +19,7 @@
     <main class="main">
         <div class="container h-100">
             <a class="link-primary float-end" href="/api/entry">Выйти</a>
-            <a class="link-primary" href="./user.html">Профиль</a>
+            <a class="link-primary" href="/user">Профиль</a>
             <form id="user-settings">
                 <div class="mb-3 avatar-fileds pt-3">
                     <div class="container-image avatar-fileds__image mb-3">
@@ -71,5 +72,30 @@
             </form>
         </div>
     </main>
+    <footer class="footer">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a href="training.html"><i class="bi bi-backspace"></i></a>
+          <a href="user-settings.html"><i class="bi bi-gear"></i></a>
+          <a data-bs-toggle="modal" data-bs-target="#copyright-popup"><i class="bi bi-info-circle"></i></a>
+        </div>
+    </footer>
+    <div class="modal fade" id="copyright-popup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content card">
+            <div class="modal-header">
+              <div class="lead">Информация о приложении</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="developers">
+
+                </div>
+                <div class="rs-school">
+                    
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 </html>
