@@ -8,6 +8,6 @@ router.get('/', logicUser.getPageUser);
 
 router.post('/api/userData', logicUser.postDataUser);
 
-router.post('/api/progress', logicUser.getProgress);
+// router.post('/api/progress', logicUser.getProgress);
 
 module.exports = router;
