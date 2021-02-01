@@ -49,11 +49,10 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    pageOne: './page-registration/index.js',
     polyfill: '@babel/polyfill',
-    pageTwo: './page-main/index.js',
-    pageUser: './page-user/index.js',
-    pageUserSettings: './page-user-settings/index.js',
+    registration: './page-registration/index.js',
+    user: './page-user/index.js',
+    settings: './page-user-settings/index.js',
     training: './page-training/index.js',
   },
   output: {
@@ -65,23 +64,15 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       filename: 'index.html',
-      chunks: ['pageOne', 'polyfill'],
+      chunks: ['registration', 'polyfill'],
       template: './page-registration/index.html',
       minify: {
         collapseWhitespace: isProd,
       },
     }),
     new HTMLWebpackPlugin({
-      filename: 'main.html',
-      chunks: ['pageTwo', 'polyfill'],
-      template: './page-main/main.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),
-    new HTMLWebpackPlugin({
       filename: 'user-settings.html',
-      chunks: ['pageUserSettings', 'polyfill'],
+      chunks: ['settings', 'polyfill'],
       template: './page-user-settings/user-settings.html',
       minify: {
         collapseWhitespace: isProd,
@@ -89,7 +80,7 @@ module.exports = {
     }),
     new HTMLWebpackPlugin({
       filename: 'user.html',
-      chunks: ['pageUser', 'polyfill'],
+      chunks: ['user', 'polyfill'],
       template: './page-user/user.html',
       minify: {
         collapseWhitespace: isProd,
