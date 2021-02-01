@@ -9,19 +9,19 @@ export default class Type4 {
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-      <div class="translate display-6">${this.translation}</div>
-      <div class="three-forms-wrapper d-flex flex-column w-50">
+      <div class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
+      <div class="three-forms-wrapper d-flex flex-column">
         <div class="three-forms__input">
-          <input class="three-forms__first form-control" type="text" value="">
-          <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+          <div class="help-text mb-2">Введите инфинитив:</div>
+          <input class="three-forms__first form-control input-width" type="text" value="">
         </div>
         <div class="three-forms__input">
-          <input class="three-forms__second form-control" type="text" value="">
-          <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+          <div class="help-text mb-2">Введите прошедшую форму:</div>
+          <input class="three-forms__second form-control input-width" type="text" value="">
         </div>
         <div class="three-forms__input">
-          <input class="three-forms__third form-control" type="text" value="">
-          <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"></i>
+          <div class="help-text mb-2">Введите вторую прошедшую форму:</div>
+          <input class="three-forms__third form-control input-width" type="text" value="">
         </div> 
       </div>
     </div>`;

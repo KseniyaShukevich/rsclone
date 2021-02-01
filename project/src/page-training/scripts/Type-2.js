@@ -11,15 +11,13 @@ export default class Type0 {
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div class="verb-form-wrapper d-flex flex-column">
-        <div class="btn btn-info btn-verb-form">${this.verb.infinitive}</div>
-        <div class="btn btn-info btn-verb-form">${this.verb.past}</div>
-        <div class="btn btn-info btn-verb-form">${this.verb.participle}</div>
+        <div class="btn-verb-form display-6 slide-font text-capitalize">${this.verb.infinitive}</div>
+        <div class="btn-verb-form display-6 slide-font text-capitalize">${this.verb.past}</div>
+        <div class="btn-verb-form display-6 pb-4 slide-font text-capitalize">${this.verb.participle}</div>
       </div>
       <div class="select-translate-wrapper">
-        <div class="help-text">Выберите правильный перевод:</div>
-        <div class="select-translate d-flex flex-row flex-wrap">
-
-        </div>
+        <div class="help-text">Выберите правильный перевод инфинитива:</div>
+        <div class="select-translate d-flex flex-row flex-wrap"></div>
       </div>
     </div>`;
     this.slideElem = null;

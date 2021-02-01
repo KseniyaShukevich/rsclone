@@ -35,3 +35,6 @@
     font-size: .75rem;
     margin-bottom: 5px;
 }
+
+.form-control:disabled, 
+.form-control[readonly] { background-color: transparent; }

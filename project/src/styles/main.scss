@@ -32,14 +32,19 @@ h1 {
 }
 
 .header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 
 }
 
-.help-text { margin-bottom: 10px; }
+.help-text { 
+    margin-bottom: 25px;
+    font-size: calc(1rem + .5vw);
+}
 
 .error-message, 
 .success-message { display: none; }
 
 .display-block { display: block; }
+
+.text-capitalize { text-transform: capitalize; }

@@ -6,9 +6,15 @@ import Type1 from './Type-1';
 import Type2 from './Type-2';
 import Type3 from './Type-3';
 import Type4 from './Type-4';
+import Type5 from './Type-5';
 
 const getWord = () => {
-  const word = localStorage.getItem(`${LSTORAGEID}word`);
+  let word = localStorage.getItem(`${LSTORAGEID}word`);
+
+  if (!word) {
+    word = 'arise';
+  }
+
   return word;
 };
 
@@ -25,6 +31,7 @@ const slideClassCollection = [
   createSlide(Type2, verbObj),
   createSlide(Type3, verbObj),
   createSlide(Type4, verbObj),
+  createSlide(Type5, verbObj),
 ];
 slideClassCollection.forEach((slide) => slide.initSlide());
 

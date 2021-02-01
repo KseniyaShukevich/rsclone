@@ -8,19 +8,20 @@ export default class Type0 {
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-      <div id="translate" class="translate display-6">${this.translation}</div>
+      <div id="translate" class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
       <div class="voice-wrapper d-flex flex-column">
+        <div class="help-text">Прослушайте три формы глагола:</div>
         <div data-is-complete="0" class="btn btn-info btn-voice">
           <div class="btn-voice__text">${this.verb.infinitive}</div>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-volume-up"></i>
         </div>
         <div data-is-complete="0" class="btn btn-info btn-voice">
           <div class="btn-voice__text">${this.verb.past}</div>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-volume-up"></i>
         </div>
         <div data-is-complete="0" class="btn btn-info btn-voice">
           <div class="btn-voice__text">${this.verb.participle}</div>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-volume-up"></i>
         </div>
       </div>
     </div>`;

@@ -11,15 +11,13 @@ export default class Type3 {
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-      <div class="translate display-6">${this.translation}</div>
-      <div class="letter-input-wrapper d-flex flex-column w-50">
-        <input class="letter-input form-control" type="text" value="" readonly>
+      <div class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
+      <div class="letter-input-wrapper d-flex flex-column">
+        <input class="letter-input form-control input-width" type="text" value="" readonly>
       </div>
       <div class="voice-wrapper">
-        <div class="help-text">Составьте <span></span> форму глагола:</div>
-        <div id="letter-container" class="voice-wrapper d-flex flex-row flex-wrap">
-
-        </div>
+        <div class="help-text">Составьте из букв <span></span> форму глагола:</div>
+        <div id="letter-container" class="voice-wrapper d-flex flex-row flex-wrap"></div>
       </div>
     </div>`;
     this.verbFormCollection = ['первую', 'вторую', 'третью'];

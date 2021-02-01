@@ -10,17 +10,15 @@ export default class Type1 {
     this.translation = verbObj.translation;
     this.slideHtml = `
       <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
-        <div class="translate display-6">${this.verb.infinitive}</div>
-        <div class="select-inputs-wrapper d-flex flex-column w-50">
-          <input data-is-complete="0" class="select-input__first-form form-control" type="text" value="" readonly>
-          <input data-is-complete="0" class="select-input__second-form form-control" type="text" value="" readonly>
-          <input data-is-complete="0" class="select-input__third-form form-control" type="text" value="" readonly>
+        <div class="translate display-6 pb-4 slide-font text-capitalize">${this.verb.infinitive}</div>
+        <div class="select-inputs-wrapper d-flex flex-column ">
+          <input data-is-complete="0" class="select-input__first-form form-control input-width" type="text" value="" readonly>
+          <input data-is-complete="0" class="select-input__second-form form-control input-width" type="text" value="" readonly>
+          <input data-is-complete="0" class="select-input__third-form form-control input-width" type="text" value="" readonly>
         </div>
-        <div class="voice-wrapper d-flex flex-row flex-wrap">
-          <div class="help-text">Выберите три формы глагола:</div>
-          <div id="btn-container" class="voice-wrapper d-flex flex-row flex-wrap">
-
-          </div>
+        <div class="voice-wrapper d-flex flex-column flex-wrap">
+          <div class="help-text">Выберите три правильные формы глагола:</div>
+          <div id="btn-container" class="voice-wrapper d-flex flex-row flex-wrap"></div>
         </div>
       </div>`;
     this.slideElem = null;
