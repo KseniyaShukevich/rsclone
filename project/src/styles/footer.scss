@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 8px;
     padding-bottom: 10px;
     background: linear-gradient(0deg,#ba54f5,#e14eca);
     box-shadow: 0 2px 22px 0 rgba(0,0,0,.1), 0 4px 20px 0 rgba(0,0,0,.15);
@@ -24,16 +24,23 @@
         &:active, 
         &:focus {
             -webkit-animation: mover .5s infinite  alternate;
-            animation: mover .5s infinite  alternate;
+                    animation: mover .5s infinite  alternate;
         }
     }
 }
 
 @-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-2px); }
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
 }
 @keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-2px); }
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+
+.rs-logo { width: 100px; }
+
+.copyright-popup .btn-close {
+    top: 16px;
+    right: 16px;
 }

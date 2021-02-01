@@ -8,3 +8,12 @@ function callRegistrationFunction() {
 }
 
 btnGetRegistrationForm.addEventListener('click', callRegistrationFunction);
+
+function hideWelcomeBlock() {
+  const welcomeBlock = document.querySelector('.welcome-block');
+
+  welcomeBlock.classList.add('animation-swipe-top');
+  document.body.classList.remove('overflow-hidden');
+}
+
+setTimeout(hideWelcomeBlock, 4000);

@@ -1,31 +1,18 @@
-.link-primary {
-    color: #e14eca!important;
+a { 
+    text-decoration: none;
+    transition: .35s;
 }
 
-.link-secondary {
+a:hover,
+a:focus, 
+a:active { opacity: .8; }
 
-}
+.link-primary { color: #e14eca!important; }
 
-.link-success {
-    color: #00f2c3!important;
-}
+.link-success { color: #00f2c3!important; }
 
-.link-danger {
-    color: #fd5d93!important;
-}
+.link-danger { color: #fd5d93!important; }
 
-.link-warning {
-    color: #ff8d72!important;
-}
+.link-warning { color: #ff8d72!important; }
 
-.link-info {
-    color: #1d8cf8!important;
-}
-
-.link-light {
-
-}
-
-.link-dark {
-    
-}
+.link-info { color: #1d8cf8!important; }
