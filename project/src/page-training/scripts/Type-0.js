@@ -1,29 +1,32 @@
 export default class Type0 {
   constructor(verbObj) {
-    this.infinitive = verbObj.infinitive;
-    this.past = verbObj.past;
-    this.participle = verbObj.participle;
+    this.verb = {
+      infinitive: verbObj.infinitive,
+      past: verbObj.past,
+      participle: verbObj.participle,
+    };
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div id="translate" class="translate display-6">${this.translation}</div>
       <div class="voice-wrapper d-flex flex-column">
         <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.infinitive}</div>
+          <div class="btn-voice__text">${this.verb.infinitive}</div>
           <i class="bi bi-play"></i>
         </div>
         <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.past}</div>
+          <div class="btn-voice__text">${this.verb.past}</div>
           <i class="bi bi-play"></i>
         </div>
         <div data-is-complete="0" class="btn btn-info btn-voice">
-          <div class="btn-voice__text">${this.participle}</div>
+          <div class="btn-voice__text">${this.verb.participle}</div>
           <i class="bi bi-play"></i>
         </div>
       </div>
     </div>`;
     this.triggers = null;
     this.mistakes = 0;
+    this.isComplete = false;
   }
 
   initSlide() {
@@ -53,6 +56,14 @@ export default class Type0 {
 
   areYouWinnigSon() {
     const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
-    if (winCondition) console.log('FUCK YEAH!!!!');
+    if (winCondition) {
+      this.isComplete = true;
+      console.log('FUCK YEAH!!!!');
+      this.showNext();
+    }
+  }
+
+  showNext() {
+    //вот тутачки
   }
 }

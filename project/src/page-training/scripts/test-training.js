@@ -33,6 +33,7 @@ document.querySelector('.carousel-item').classList.add('active');
 const myCarousel = document.querySelector('#carousel');
 const slides = document.querySelectorAll('.carousel-item');
 slides.forEach((elem, i) => elem.setAttribute('data-slide-to', i));
+
 const carousel = new Carousel(myCarousel, {
   interval: false,
   wrap: false,

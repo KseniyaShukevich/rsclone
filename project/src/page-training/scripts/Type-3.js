@@ -2,15 +2,12 @@
 /* eslint-disable no-bitwise */
 export default class Type3 {
   constructor(verbObj, verbs) {
+    this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
       past: verbObj.past,
       participle: verbObj.participle,
     };
-    this.verbs = verbs;
-    this.infinitive = verbObj.infinitive;
-    this.past = verbObj.past;
-    this.participle = verbObj.participle;
     this.translation = verbObj.translation;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
@@ -25,13 +22,13 @@ export default class Type3 {
         </div>
       </div>
     </div>`;
-    this.forms = ['infinitive', 'past', 'participle'];
     this.verbFormCollection = ['первую', 'вторую', 'третью'];
     this.slideElem = null;
     this.letterContainer = null;
     this.letterButtons = null;
     this.order = 0;
     this.mistakes = 0;
+    this.isComplete = false;
   }
 
   initSlide() {
@@ -110,11 +107,17 @@ export default class Type3 {
         this.reset();
         this.next();
       } else {
+        this.isComplete = true;
         alert('HELL YEAH!!!');
+        this.showNext();
       }
     } else {
       alert('Nope.');
       this.reset();
     }
+  }
+
+  showNext() {
+    //вот тутачки
   }
 }
