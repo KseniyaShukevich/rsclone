@@ -1,3 +1,7 @@
+import getUserToken from '../../services/data-user';
+import request from '../../services/request';
+import { LSTORAGEID } from '../../services/constants';
+
 export default class Type4 {
   constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
@@ -23,7 +27,7 @@ export default class Type4 {
         <div class="three-forms__input">
           <div class="help-text mb-2">Введите вторую прошедшую форму:</div>
           <input class="three-forms__third form-control input-width" type="text" value="">
-        </div> 
+        </div>
       </div>
     </div>`;
     this.slideElem = null;
@@ -66,6 +70,10 @@ export default class Type4 {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
+    if (!(+errors.textContent)) {
+      const word = localStorage.getItem(`${LSTORAGEID}word`);
+      request('/training/api/progress', 'POST', { token: getUserToken(), word });
+    }
     setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }
