@@ -23,7 +23,7 @@ export default class Type4 {
         <div class="three-forms__input">
           <div class="help-text mb-2">Введите вторую прошедшую форму:</div>
           <input class="three-forms__third form-control input-width" type="text" value="">
-        </div> 
+        </div>
       </div>
     </div>`;
     this.slideElem = null;
@@ -67,5 +67,6 @@ export default class Type4 {
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
     setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    console.log('YES');
   }
 }

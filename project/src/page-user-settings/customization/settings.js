@@ -16,6 +16,15 @@ const saveErrorMessage = document.querySelector('#save-error-message');
 const emailErrorMessageReg = document.querySelector('#email-error-message-reg');
 const successSaveMessage = document.querySelector('#success-save-message');
 
+(async function addOldPhoto() {
+  const result = await request('/user/api/userData', 'POST', { token: getUserToken() });
+  if (result[0].image) {
+    containerImagePreview.src = result[0].image;
+  } else {
+    containerImagePreview.src = 'avatar.jpg';
+  }
+}());
+
 (function addUserToken() {
   const userToken = document.querySelector('#user-token');
   userToken.value = getUserToken();
