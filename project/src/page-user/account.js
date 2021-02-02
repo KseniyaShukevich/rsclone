@@ -12,16 +12,16 @@ function addWordToLStorage(e) {
 
 function addStyles(card, isLearned) {
   if (isLearned) {
-    card.classList.add('true');
+    card.classList.add('complete');
   } else {
-    card.classList.add('false');
+    card.classList.add('not-complete');
   }
 }
 
 function createCard(word, isLearned) {
   const card = document.createElement('a');
   card.href = '/training';
-  card.style.display = 'block';
+  card.className = 'd-block';
   card.textContent = word;
   addStyles(card, isLearned);
   card.addEventListener('click', addWordToLStorage);
@@ -42,7 +42,7 @@ function fillUserAccount(dataUser) {
   if (dataUser[0].image) {
     userPhoto.style.backgroundImage = `url("./${dataUser[0].image}")`;
   } else {
-    userPhoto.style.backgroundImage = 'url("./blank_photo.jpg")';
+    userPhoto.style.backgroundImage = 'url("./avatar.jpg")';
   }
   addTrainings(dataUser[0].progress);
 }
