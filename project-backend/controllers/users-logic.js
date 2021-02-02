@@ -24,20 +24,7 @@ const getPageUser = (req, res) => {
   res.sendFile(path.join(__dirname, '../../project/dist/user.html'));
 };
 
-// const getProgress = (req, res) => {
-//   User.find({ token: req.body.token }, (err, result) => {
-//     if (err) return console.log(err);
-
-//     if (result.length) {
-//       res.json(result[0].progress);
-//     }
-
-//     return null;
-//   });
-// };
-
 module.exports = {
   getPageUser,
   postDataUser
-  // getProgress
 };

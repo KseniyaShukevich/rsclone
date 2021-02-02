@@ -1,3 +1,7 @@
+import getUserToken from '../../services/data-user';
+import request from '../../services/request';
+import { LSTORAGEID } from '../../services/constants';
+
 export default class Type4 {
   constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
@@ -66,7 +70,10 @@ export default class Type4 {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
+    if (!(+errors.textContent)) {
+      const word = localStorage.getItem(`${LSTORAGEID}word`);
+      request('/training/api/progress', 'POST', { token: getUserToken(), word });
+    }
     setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
-    console.log('YES');
   }
 }
