@@ -1,6 +1,6 @@
 /* eslint-disable no-bitwise */
 export default class Type0 {
-  constructor(verbObj, verbs) {
+  constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
@@ -8,6 +8,7 @@ export default class Type0 {
       participle: verbObj.participle,
     };
     this.translation = verbObj.translation;
+    this.carouselControls = carousel;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div class="verb-form-wrapper d-flex flex-column">
@@ -31,7 +32,7 @@ export default class Type0 {
 
     this.slideElem.classList.add('carousel-item', 'h-100');
     this.slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', this.slideElem);
+    carousel.insertAdjacentElement('afterbegin', this.slideElem);
 
     this.addTriggers();
   }
@@ -89,14 +90,10 @@ export default class Type0 {
   areYouWinnigSon(choice) {
     const answer = this.translation;
     const winCondition = choice === answer;
-    if (winCondition) {
-      this.isComplete = true;
-      alert('FUCK YEAH!!!!');
-      this.showNext();
-    }
+    if (winCondition) this.goNext();
   }
 
-  showNext() {
-    // вот тутачки
+  goNext() {
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }

@@ -1,5 +1,5 @@
 export default class Type4 {
-  constructor(verbObj, verbs) {
+  constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
@@ -7,6 +7,7 @@ export default class Type4 {
       participle: verbObj.participle,
     };
     this.translation = verbObj.translation;
+    this.carouselControls = carousel;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
@@ -27,7 +28,6 @@ export default class Type4 {
     </div>`;
     this.slideElem = null;
     this.mistakes = 0;
-    this.isComplete = false;
   }
 
   initSlide() {
@@ -36,7 +36,7 @@ export default class Type4 {
 
     this.slideElem.classList.add('carousel-item', 'h-100');
     this.slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', this.slideElem);
+    carousel.insertAdjacentElement('afterbegin', this.slideElem);
 
     this.inputs = this.slideElem.querySelectorAll('.form-control');
     this.addTriggers();
@@ -54,14 +54,11 @@ export default class Type4 {
   }
 
   areYouWinningSon() {
-    if ([...this.inputs].every((input, i) => input.value === Object.values(this.verb)[i])) {
-      this.isComplete = true;
-      alert('HELL YEAH!!!');
-      this.showNext();
-    }
+    const win = [...this.inputs].every((input, i) => input.value === Object.values(this.verb)[i]);
+    if (win) this.goNext();
   }
 
-  showNext() {
-    //вот тутачки
+  goNext() {
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }
