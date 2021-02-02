@@ -95,6 +95,9 @@ export default class Type1 {
           this.triggerElems[this.order].value = button.textContent;
           this.triggerElems[this.order].dataset.isComplete = 1;
           this.order += 1;
+        } else {
+          this.mistakes += 1;
+          console.log(this.mistakes);
         }
         this.areYouWinnigSon();
       }
@@ -107,6 +110,9 @@ export default class Type1 {
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

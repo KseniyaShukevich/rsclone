@@ -67,6 +67,9 @@ export default class Type3 {
   addTriggers() {
     this.letterContainer.addEventListener('click', (e) => {
       const button = e.target.closest('.btn');
+
+      if (!button) return;
+
       const btnText = button.textContent;
 
       if (!button.classList.contains('activated')) {
@@ -107,11 +110,15 @@ export default class Type3 {
         this.goNext();
       }
     } else {
+      this.mistakes += 1;
       this.reset();
     }
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

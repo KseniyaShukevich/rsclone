@@ -44,11 +44,15 @@ export default class Type4 {
   }
 
   addTriggers() {
-    this.inputs.forEach((input, i) => input.addEventListener('input', () => {
-      if (input.value === Object.values(this.verb)[i]) {
+    this.inputs.forEach((input, i) => input.addEventListener('input', (e) => {
+      if (e.target.value.length > Object.values(this.verb)[i].length) {
+        e.target.value = '';
+        this.mistakes += 1;
+      }
+      if (e.target.value === Object.values(this.verb)[i]) {
         this.areYouWinningSon();
-        input.setAttribute('readonly', 'readonly');
-        if (i + 1 < this.inputs.length) this.inputs[i + 1].focus();
+        e.target.setAttribute('readonly', 'readonly');
+        if (i + 1 < this.inputs.length) this.inputs[(i + 1) % 3].focus();
       }
     }));
   }
@@ -59,6 +63,9 @@ export default class Type4 {
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

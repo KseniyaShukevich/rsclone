@@ -90,10 +90,17 @@ export default class Type0 {
   areYouWinnigSon(choice) {
     const answer = this.translation;
     const winCondition = choice === answer;
-    if (winCondition) this.goNext();
+    if (winCondition) {
+      this.goNext();
+    } else {
+      this.mistakes += 1;
+    }
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

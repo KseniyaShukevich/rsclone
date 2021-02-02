@@ -1,5 +1,3 @@
-import { Carousel, Popper } from 'bootstrap';
-
 export default class Type0 {
   constructor(verbObj, verbs, carousel) {
     this.verb = {
@@ -67,6 +65,6 @@ export default class Type0 {
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }
