@@ -1,11 +1,12 @@
 export default class Type0 {
-  constructor(verbObj) {
+  constructor(verbObj, verbs, carousel) {
     this.verb = {
       infinitive: verbObj.infinitive,
       past: verbObj.past,
       participle: verbObj.participle,
     };
     this.translation = verbObj.translation;
+    this.carouselControls = carousel;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div id="translate" class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
@@ -25,20 +26,20 @@ export default class Type0 {
         </div>
       </div>
     </div>`;
+    this.slideElem = null;
     this.triggers = null;
     this.mistakes = 0;
-    this.isComplete = false;
   }
 
   initSlide() {
-    const slideElem = document.createElement('div');
+    this.slideElem = document.createElement('div');
     const carousel = document.querySelector('.carousel-inner');
 
-    slideElem.classList.add('carousel-item', 'h-100');
-    slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', slideElem);
+    this.slideElem.classList.add('carousel-item', 'h-100');
+    this.slideElem.innerHTML = this.slideHtml;
+    carousel.insertAdjacentElement('afterbegin', this.slideElem);
 
-    this.triggers = [...slideElem.querySelectorAll('[data-is-complete]')];
+    this.triggers = [...this.slideElem.querySelectorAll('[data-is-complete]')];
     this.triggers.forEach((elem) => elem.addEventListener('click', () => this.addTrigger(elem)));
   }
 
@@ -59,12 +60,11 @@ export default class Type0 {
     const winCondition = this.triggers.every((elem) => +elem.dataset.isComplete === 1);
     if (winCondition) {
       this.isComplete = true;
-      console.log('FUCK YEAH!!!!');
-      this.showNext();
+      this.goNext();
     }
   }
 
-  showNext() {
-    //вот тутачки
+  goNext() {
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

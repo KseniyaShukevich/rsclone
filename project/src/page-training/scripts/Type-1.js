@@ -1,6 +1,6 @@
 /* eslint-disable no-bitwise */
 export default class Type1 {
-  constructor(verbObj, verbs) {
+  constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
@@ -8,6 +8,7 @@ export default class Type1 {
       participle: verbObj.participle,
     };
     this.translation = verbObj.translation;
+    this.carouselControls = carousel;
     this.slideHtml = `
       <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
         <div class="translate display-6 pb-4 slide-font text-capitalize">${this.verb.infinitive}</div>
@@ -25,7 +26,6 @@ export default class Type1 {
     this.triggerElems = null;
     this.order = 0;
     this.mistakes = 0;
-    this.isComplete = false;
   }
 
   initSlide() {
@@ -34,7 +34,7 @@ export default class Type1 {
 
     this.slideElem.classList.add('carousel-item', 'h-100');
     this.slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', this.slideElem);
+    carousel.insertAdjacentElement('afterbegin', this.slideElem);
 
     this.triggerElems = this.slideElem.querySelectorAll('input');
     this.addTriggers();
@@ -80,21 +80,24 @@ export default class Type1 {
   }
 
   addTriggers() {
+    const conditions = Object.values(this.verb);
     const container = this.slideElem.querySelector('#btn-container');
     const buttons = this.createButtons();
 
     container.append(...buttons);
     container.addEventListener('click', (e) => {
-      if (this.order < this.conditions.length) {
+      if (this.order < conditions.length) {
         const button = e.target.closest('.btn-choice');
         const btnText = button.textContent;
-        const triggerWord = this[this.conditions[this.order]];
+        const triggerWord = conditions[this.order];
 
         if (btnText === triggerWord) {
-          // add some actions
           this.triggerElems[this.order].value = button.textContent;
           this.triggerElems[this.order].dataset.isComplete = 1;
           this.order += 1;
+        } else {
+          this.mistakes += 1;
+          console.log(this.mistakes);
         }
         this.areYouWinnigSon();
       }
@@ -103,14 +106,13 @@ export default class Type1 {
 
   areYouWinnigSon() {
     const winCondition = [...this.triggerElems].every((elem) => +elem.dataset.isComplete === 1);
-    if (winCondition) {
-      this.isComplete = true;
-      alert('FUCK YEAH!!!!');
-      this.showNext();
-    }
+    if (winCondition) this.goNext();
   }
 
-  showNext() {
-    //вот тутачки
+  goNext() {
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }

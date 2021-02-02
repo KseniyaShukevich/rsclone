@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-bitwise */
 export default class Type3 {
-  constructor(verbObj, verbs) {
+  constructor(verbObj, verbs, carousel) {
     this.verbs = verbs;
     this.verb = {
       infinitive: verbObj.infinitive,
@@ -9,6 +9,7 @@ export default class Type3 {
       participle: verbObj.participle,
     };
     this.translation = verbObj.translation;
+    this.carouselControls = carousel;
     this.slideHtml = `
     <div class="d-flex flex-column justify-content-between h-100 pt-5 pb-3">
       <div class="translate display-6 pb-4 slide-font text-capitalize">${this.translation}</div>
@@ -26,7 +27,6 @@ export default class Type3 {
     this.letterButtons = null;
     this.order = 0;
     this.mistakes = 0;
-    this.isComplete = false;
   }
 
   initSlide() {
@@ -35,7 +35,7 @@ export default class Type3 {
 
     this.slideElem.classList.add('carousel-item', 'h-100');
     this.slideElem.innerHTML = this.slideHtml;
-    carousel.insertAdjacentElement('beforeend', this.slideElem);
+    carousel.insertAdjacentElement('afterbegin', this.slideElem);
 
     // this.addTriggers();
     this.letterContainer = this.slideElem.querySelector('#letter-container');
@@ -67,6 +67,9 @@ export default class Type3 {
   addTriggers() {
     this.letterContainer.addEventListener('click', (e) => {
       const button = e.target.closest('.btn');
+
+      if (!button) return;
+
       const btnText = button.textContent;
 
       if (!button.classList.contains('activated')) {
@@ -101,21 +104,21 @@ export default class Type3 {
     if (this.letterInput.value === Object.values(this.verb)[this.order]) {
       this.order += 1;
       if (this.order < this.verbFormCollection.length) {
-        alert('YEAH!!!');
         this.reset();
         this.next();
       } else {
-        this.isComplete = true;
-        alert('HELL YEAH!!!');
-        this.showNext();
+        this.goNext();
       }
     } else {
-      alert('Nope.');
+      this.mistakes += 1;
       this.reset();
     }
   }
 
-  showNext() {
-    //вот тутачки
+  goNext() {
+    const resultSlide = document.querySelector('#result');
+    const errors = resultSlide.querySelector('.errors-count');
+    errors.textContent = +errors.textContent + this.mistakes;
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
   }
 }
