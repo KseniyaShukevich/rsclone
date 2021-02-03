@@ -44,3 +44,12 @@
 }
 
 #user-name { font-size: 20px; }
+
+#user-photo {
+    height: 100px; 
+    width: 100px; 
+    border-radius: 50%; 
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1px 20px 0 #0000001a;
+}

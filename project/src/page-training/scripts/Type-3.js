@@ -72,13 +72,15 @@ export default class Type3 {
 
       const btnText = button.textContent;
 
-      if (!button.classList.contains('activated')) {
+      if (!button.classList.contains('active')) {
         this.letterInput.value += btnText;
-        button.classList.add('activated');
-        if (this.letterButtons.every((btn) => btn.classList.contains('activated'))) {
+        button.classList.add('active');
+        if (this.letterButtons.every((btn) => btn.classList.contains('active'))) {
           this.areYouWinnigSon();
         }
       }
+
+      this.setActiveButton(e);
     });
   }
 
@@ -90,7 +92,7 @@ export default class Type3 {
 
   reset() {
     this.letterButtons.forEach((button) => {
-      button.classList.remove('activated');
+      button.classList.remove('active');
     });
     this.letterInput.value = '';
   }
@@ -119,6 +121,6 @@ export default class Type3 {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }

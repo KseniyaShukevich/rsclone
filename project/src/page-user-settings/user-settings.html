@@ -19,12 +19,9 @@
     <main class="main">
         <div class="container h-100">
             <a class="link-primary float-end" href="/api/entry">Выйти <i class="bi bi-arrow-right-short"></i></a>
-            <a class="link-primary" href="/user"><i class="bi bi-arrow-left-short"></i> Профиль</a>
             <form id="user-settings">
                 <div class="mb-3 avatar-fileds pt-3">
-                    <div class="container-image avatar-fileds__image mb-3">
-                        <img src="" id="image-preview">
-                    </div>
+                    <div class="container-image avatar-fileds__image mb-3" id="image-preview"></div>
                     <div class="avatar-fileds__wrapper position-relative">
                         <div class="avatar-fileds__label">Выберите фото</div>
                         <input class="avatar-fileds__input position-absolute" name="file" type="file" id="file">
@@ -73,9 +70,9 @@
     </main>
     <footer class="footer">
         <div class="container d-flex justify-content-between align-items-center">
-          <a href="training.html"><i class="bi bi-backspace"></i></a>
-          <a href="/user"><i class="bi bi-person"></i></a>
-          <a data-bs-toggle="modal" data-bs-target="#copyright-popup"><i class="bi bi-info-circle"></i></a>
+            <a href="/user"><i class="bi bi-person"></i></a>
+            <a href="/settings"><i class="bi bi-gear"></i></a>          
+            <a data-bs-toggle="modal" data-bs-target="#copyright-popup"><i class="bi bi-info-circle"></i></a>
         </div>
     </footer>
     <div class="modal fade copyright-popup" id="copyright-popup" tabindex="-1" aria-hidden="true">

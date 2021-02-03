@@ -101,7 +101,15 @@ export default class Type1 {
         }
         this.areYouWinnigSon();
       }
+
+      this.setActiveButton(e);
     });
+  }
+
+  setActiveButton(event) {
+    if (event.target.classList.contains('btn-choice')) {
+      event.target.classList.add('active');
+    }
   }
 
   areYouWinnigSon() {
@@ -113,6 +121,6 @@ export default class Type1 {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }
