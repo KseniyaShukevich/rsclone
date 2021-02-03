@@ -19,9 +19,9 @@ const successSaveMessage = document.querySelector('#success-save-message');
 (async function addOldPhoto() {
   const result = await request('/user/api/userData', 'POST', { token: getUserToken() });
   if (result[0].image) {
-    containerImagePreview.src = result[0].image;
+    containerImagePreview.style.backgroundImage = `url("${result[0].image}")`;
   } else {
-    containerImagePreview.src = 'avatar.jpg';
+    containerImagePreview.style.backgroundImage = 'url("./avatar.jpg")';
   }
 }());
 
@@ -34,7 +34,7 @@ function loadImage() {
   if (inputImage.files && inputImage.files[0]) {
     const reader = new FileReader();
     reader.addEventListener('loadend', (e) => {
-      containerImagePreview.src = e.target.result;
+      containerImagePreview.style.backgroundImage = `url("${e.target.result}")`;
     });
     reader.readAsDataURL(inputImage.files[0]);
   }

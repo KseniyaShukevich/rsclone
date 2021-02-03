@@ -69,11 +69,17 @@ export default class Type4 {
   goNext() {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
-    errors.textContent = +errors.textContent + this.mistakes;
+    errors.textContent = '';
+    
     if (!(+errors.textContent)) {
       const word = localStorage.getItem(`${LSTORAGEID}word`);
       request('/training/api/progress', 'POST', { token: getUserToken(), word });
     }
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
+    setTimeout(() => {
+      errors.classList.remove('loader');
+      errors.classList.add('errors-count_animate');
+      errors.textContent = +errors.textContent + this.mistakes;
+    }, 5000);
   }
 }

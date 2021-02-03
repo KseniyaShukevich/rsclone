@@ -84,7 +84,14 @@ export default class Type0 {
       const btnText = button.textContent;
 
       this.areYouWinnigSon(btnText);
+      this.setActiveButton(e);
     });
+  }
+
+  setActiveButton(event) {
+    if (event.target.classList.contains('btn-select-translate')) {
+      event.target.classList.add('active');
+    }
   }
 
   areYouWinnigSon(choice) {
@@ -101,6 +108,6 @@ export default class Type0 {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
     errors.textContent = +errors.textContent + this.mistakes;
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }

@@ -40,7 +40,11 @@
 
 .rs-logo { width: 100px; }
 
-.copyright-popup .btn-close {
-    top: 16px;
-    right: 16px;
+.copyright-popup {
+    font-size: 17px;
+    
+    & .btn-close {
+        top: 16px;
+        right: 16px;
+    }
 }

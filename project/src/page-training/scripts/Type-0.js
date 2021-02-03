@@ -54,6 +54,11 @@ export default class Type0 {
 
     speechSynthesis.speak(utterance);
     this.areYouWinnigSon();
+    this.setActiveButton(triggerElem);
+  }
+
+  setActiveButton(activeButton) {
+    activeButton.classList.add('active');
   }
 
   areYouWinnigSon() {
@@ -65,6 +70,6 @@ export default class Type0 {
   }
 
   goNext() {
-    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1500);
+    setTimeout(() => this.slideElem.setAttribute('data-is-solved', 1), 1000);
   }
 }
