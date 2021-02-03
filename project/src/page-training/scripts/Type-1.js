@@ -97,7 +97,6 @@ export default class Type1 {
           this.order += 1;
         } else {
           this.mistakes += 1;
-          console.log(this.mistakes);
         }
         this.areYouWinnigSon();
       }
