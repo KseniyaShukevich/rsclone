@@ -69,9 +69,10 @@ export default class Type4 {
   goNext() {
     const resultSlide = document.querySelector('#result');
     const errors = resultSlide.querySelector('.errors-count');
+    const finalErrors = +errors.textContent + this.mistakes;
     errors.textContent = '';
     
-    if (!(+errors.textContent)) {
+    if (!(+finalErrors)) {
       const word = localStorage.getItem(`${LSTORAGEID}word`);
       request('/training/api/progress', 'POST', { token: getUserToken(), word });
     }
@@ -79,7 +80,7 @@ export default class Type4 {
     setTimeout(() => {
       errors.classList.remove('loader');
       errors.classList.add('errors-count_animate');
-      errors.textContent = +errors.textContent + this.mistakes;
-    }, 5000);
+      errors.textContent = finalErrors;
+    }, 2000);
   }
 }

@@ -79,8 +79,6 @@ export default class Type3 {
           this.areYouWinnigSon();
         }
       }
-
-      this.setActiveButton(e);
     });
   }
 
