@@ -1,0 +1,69 @@
+.message-error {
+    display: none;
+}
+
+.opacity-1 {
+    display: block;
+}
+
+/**
+    redefine bootstrap styles
+**/
+
+.modal-dialog { max-width: 560px; }
+
+/**
+    registration
+**/
+
+.authorization {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.welcome-block {
+    top: 0;
+    background: linear-gradient(0deg,#ba54f5,#e14eca);
+
+    &__text {
+        font-size: 12vw;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: #f5f6fa;
+
+        &_first {
+            transform: translateX(0);
+            -webkit-animation: slide_left 2s 1 alternate;
+                    animation: slide_left 2s 1 alternate;
+        }
+
+        &_second {
+            transform: translateX(0);
+            -webkit-animation: slide_right 2s 1 alternate;
+                    animation: slide_right 2s 1 alternate;
+        }
+    }
+}
+
+@-webkit-keyframes slide_left {
+    from { transform: translateX(-1000%); }
+    to { transform: translateX(0); }
+}
+@keyframes slide_left {
+    from { transform: translateX(-1000%); }
+    to { transform: translateX(0); }
+}
+
+@-webkit-keyframes slide_right {
+    from { transform: translateX(1000%); }
+    to { transform: translateX(0); }
+}
+@keyframes slide_right {
+    from { transform: translateX(1000%); }
+    to { transform: translateX(0); }
+}
+
+.animation-swipe-top {
+    top: -100%;
+    transition: 1s;
+}

@@ -1,0 +1,50 @@
+* {
+    padding: 0 0;
+    margin: 0 0;
+    box-sizing: border-box;
+    -ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    padding-bottom: 70px;
+    color: #1d253b;
+    background-color: #f5f6fa;
+
+    &.dark { 
+        background-color: #1e1e2f;
+        color: hsla(0,0%,100%,.6);
+    }
+}
+
+.without-footer { padding-bottom: 0; }
+
+h1 {
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+
+.header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+
+.help-text { 
+    margin-bottom: 25px;
+    font-size: calc(1rem + .5vw);
+}
+
+.error-message, 
+.success-message { display: none; }
+
+.display-block { display: block; }
+
+.text-capitalize { text-transform: capitalize; }

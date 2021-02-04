@@ -1,0 +1,50 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    background: linear-gradient(0deg,#ba54f5,#e14eca);
+    box-shadow: 0 2px 22px 0 rgba(0,0,0,.1), 0 4px 20px 0 rgba(0,0,0,.15);
+
+    & i { 
+        color: #fff;
+        font-size: 26px;
+        line-height: 1;
+    }
+
+    & a { 
+        display: inline-block;
+        transition: .35s;
+        cursor: pointer;
+
+        &:hover, 
+        &:active, 
+        &:focus {
+            -webkit-animation: mover .5s infinite  alternate;
+                    animation: mover .5s infinite  alternate;
+        }
+    }
+}
+
+@-webkit-keyframes mover {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+@keyframes mover {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+
+.rs-logo { width: 100px; }
+
+.copyright-popup {
+    font-size: 17px;
+    
+    & .btn-close {
+        top: 16px;
+        right: 16px;
+    }
+}

@@ -1,0 +1,23 @@
+.card {
+    border: none;
+    background: #fff; 
+    box-shadow: 0 1px 15px 0 hsla(0,0%,48%,.05);
+    border-radius: 5px;
+
+    &-header {
+        padding: 15px 15px 0;
+        font-size: 17px;
+        margin-bottom: 15px;
+        background-color: transparent;
+        border-bottom: 0;
+    }
+
+    &-body {
+        padding: 15px;
+    }
+}
+
+.dark .card { 
+    background-color: #27293d;
+    color: hsla(0,0%,100%,.6);
+}
